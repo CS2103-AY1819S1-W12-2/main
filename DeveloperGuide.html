@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>AddressBook Level 4 - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level4</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level4"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>AddressBook Level 4 - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">DebtTracker</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S1-W12-2/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>AddressBook Level 4 - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>W12-2</code>      Since: <code>September 2018</code>      Licence: <code>MIT</code></p>
@@ -65,8 +65,10 @@
 <li><a href="#instructions-for-manual-testing">8. Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">8.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-person">8.2. Deleting a person</a></li>
+<li><a href="#deleting-a-transaction">8.2. Deleting a transaction</a></li>
 <li><a href="#saving-data">8.3. Saving data</a></li>
+<li><a href="#add-profile-image">8.4. Add Profile Image</a></li>
+<li><a href="#add-filter-command">8.5. Add Filter Command</a></li>
 </ul>
 </li>
 </ul>
@@ -380,8 +382,8 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">Medium</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">find a person by name</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">retrieve information about the person</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">find a transaction by name</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">retrieve information about the transaction</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">Medium</p></td>
@@ -429,7 +431,7 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">Medium</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">add location attribute to my user record</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">know where to make the payment if the payment is to be done in person</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">know where to make the payment if the payment is to be done in transaction</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">Medium</p></td>
@@ -458,8 +460,8 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">Low</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">know how much money that I have loaned that person</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">keep records of the amount of money that I have loaned to that person</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">know how much money that I have loaned that transaction</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">keep records of the amount of money that I have loaned to that transaction</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">Low</p></td>
@@ -666,7 +668,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
 </li>
 <li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a person) and/or raise events.</p>
+<p>The command execution can affect the <code>Model</code> (e.g. adding a transaction) and/or raise events.</p>
 </li>
 <li>
 <p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
@@ -804,7 +806,7 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th person in the address book. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
+<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th transaction in the address book. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -812,7 +814,7 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new person. The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
+<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new transaction. The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -832,7 +834,7 @@ If a command fails its execution, it will not call <code>Model#commitAddressBook
 </table>
 </div>
 <div class="paragraph">
-<p>Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
+<p>Step 4. The user now decides that adding the transaction was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -923,7 +925,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the person being deleted).</p>
+<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the transaction being deleted).</p>
 </li>
 <li>
 <p>Cons: We must ensure that the implementation of each individual command are correct.</p>
@@ -1174,21 +1176,18 @@ Attributes left unset in <code>.adoc</code> files will use their <strong>default
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock"><code>site-section</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: default;"><div><div class="paragraph">
-<p>Site section that the document belongs to.
-This will cause the associated item in the navigation bar to be highlighted.
-One of: <code>UserGuide</code>, <code>DeveloperGuide</code>, <code>LearningOutcomes</code>*, <code>AboutUs</code>, <code>ContactUs</code></p>
-</div>
-<div class="paragraph">
-<p><em>* Official SE-EDU projects only</em></p>
+<p>Site section that the document belongs to.</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock"><em>not set</em></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock">This will cause the associated item in the navigation bar to be highlighted.
+ One of: <code>UserGuide</code>, <code>DeveloperGuide</code>, <code>LearningOutcomes</code>*, <code>AboutUs</code>, <code>ContactUs</code></p>
+<p class="tableblock"><em>* Official SE-EDU projects only</em></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock"><code>no-site-header</code></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: default;"><div><div class="paragraph">
-<p>Set this attribute to remove the site navigation bar.</p>
-</div></div></td>
 <td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock"><em>not set</em></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: default;"><div><div class="paragraph">
+<p><code>no-site-header</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock">Set this attribute to remove the site navigation bar.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1463,11 +1462,11 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">8.2. Deleting a person</a></h3>
+<h3 id="deleting-a-transaction"><a class="link" href="#deleting-a-transaction">8.2. Deleting a transaction</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a person while all persons are listed</p>
+<p>Deleting a transaction while all persons are listed</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -1479,7 +1478,7 @@ Expected: First contact is deleted from the list. Details of the deleted contact
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
-Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.</p>
+Expected: No transaction is deleted. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
 <p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
@@ -1514,5 +1513,40 @@ Expected: Similar to previous.</p>
 <p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="add-profile-image"><a class="link" href="#add-profile-image">8.4. Add Profile Image</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Prerequisites: The Profile Image should not exceed 10MB.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Advantage: It would prevent user from uploading large file as the application may be unstable.</p>
+</li>
+</ol>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-01 12:24:10 UTC</div></div></div></body></html>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-filter-command"><a class="link" href="#add-filter-command">8.5. Add Filter Command</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Prerequisites: Command input must adhere strictly to specified format</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>filter n/john e/hotmail.com</code><br>
+Expected: Lists all persons named john with a hotmail.com email</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-25 17:23:04 UTC</div></div></div></body></html>
