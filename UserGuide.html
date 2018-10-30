@@ -21,7 +21,7 @@
 <li><a href="#calculating-interest-on-transactions-code-interest-code">3.6. Calculating interest on transactions: <code>interest</code></a></li>
 <li><a href="#updating-a-transaction-code-edit-code">3.7. Updating a transaction : <code>edit</code></a></li>
 <li><a href="#sorting-transactions-code-sort-code-to-be-implemented">3.8. Sorting transactions : <code>sort</code> (to be implemented)</a></li>
-<li><a href="#filtering-transactions-by-name-of-person-code-filter-code-to-be-implemented">3.9. Filtering transactions by name of person: <code>filter</code> (to be implemented)</a></li>
+<li><a href="#filtering-transactions-by-various-criteria-code-filter-code">3.9. Filtering transactions by various criteria: <code>filter</code></a></li>
 <li><a href="#filtering-transactions-by-closest-deadline-code-nt-code">3.10. Filtering transactions by closest deadline: <code>nt</code></a></li>
 <li><a href="#locating-transactions-by-person-s-name-code-find-code">3.11. Locating transactions by person&#8217;s name : <code>find</code></a></li>
 <li><a href="#locating-transactions-by-substring-code-search-code">3.12. Locating transactions by substring : <code>search</code></a></li>
@@ -158,10 +158,10 @@ Format: sort [t/TAG]&#8230;&#8203;</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="filtering-transactions-by-name-of-person-code-filter-code-to-be-implemented"><a class="link" href="#filtering-transactions-by-name-of-person-code-filter-code-to-be-implemented">3.9. Filtering transactions by name of person: <code>filter</code> (to be implemented)</a></h3>
+<h3 id="filtering-transactions-by-various-criteria-code-filter-code"><a class="link" href="#filtering-transactions-by-various-criteria-code-filter-code">3.9. Filtering transactions by various criteria: <code>filter</code></a></h3>
 <div class="paragraph">
-<p>Filter transactions by names of the contacts.
-Format: filter FIRST_NAME [MORE_NAMES]</p>
+<p>Filters transactions matching specified criteria.
+Format: filter [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [tt/TYPE] [ta/AMOUNT] [td/DEADLINE] [tamin/MIN_AMOUNT] [tamax/MAX_AMOUNT] [tdmin/EARLIEST_DATE] [tdmax/LATEST_DATE]</p>
 </div>
 </div>
 <div class="sect2">
@@ -312,6 +312,10 @@ e.g. find James Jake</p>
 e.g. search Be</p>
 </div>
 <div class="paragraph">
+<p>Filter: filter [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [tt/TYPE] [ta/AMOUNT] [td/DEADLINE] [tamin/MIN_AMOUNT] [tamax/MAX_AMOUNT] [tdmin/EARLIEST_DATE] [tdmax/LATEST_DATE]
+E.g. filter n/Alex e/example.com tt/debt tamin/SGD 10.00 tdmax/31/12/2018</p>
+</div>
+<div class="paragraph">
 <p>Delete : delete INDEX
 e.g. delete 3</p>
 </div>
@@ -341,4 +345,4 @@ e.g.select 2</p>
 <p>Help : help</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 10:43:39 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 11:09:06 UTC</div></div></div></body></html>
