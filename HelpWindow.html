@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>AddressBook Level 4 - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Debt Tracker - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>AddressBook Level 4 - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>Debt Tracker - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>W12-2</code>      Since: <code>September 2018</code>       Licence: <code>MIT</code></p>
@@ -13,26 +13,26 @@
 <li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#adding-a-transaction-code-add-code">3.1. Adding a transaction : <code>add</code></a></li>
-<li><a href="#analyse-the-your-financial-status-code-analytics-code">3.2. Analyse the your financial status : <code>analytics</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.3. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#currency-conversion-of-transaction-amounts-code-convert-code">3.4. Currency conversion of transaction amounts: <code>convert</code></a></li>
-<li><a href="#deleting-a-transaction-code-delete-code">3.5. Deleting a transaction : <code>delete</code></a></li>
-<li><a href="#editing-a-transaction-code-edit-code">3.6. Editing a transaction : <code>edit</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.7. Exiting the program : <code>exit</code></a></li>
-<li><a href="#filtering-transactions-code-filter-code">3.8. Filtering transactions: <code>filter</code></a></li>
-<li><a href="#locating-transactions-by-transaction-s-name-code-find-code">3.9. Locating transactions by transaction&#8217;s name : <code>find</code></a></li>
-<li><a href="#viewing-help-code-help-code">3.10. Viewing help : <code>help</code></a></li>
-<li><a href="#hiding-transactions-with-a-private-contact-code-hide-code">3.11. Hiding transactions with a private contact : <code>hide</code></a></li>
-<li><a href="#listing-all-recorded-expenses-code-history-code">3.12. Listing all recorded expenses : <code>history</code></a></li>
-<li><a href="#adding-interest-rate-to-a-debt-code-interest-code">3.13. Adding interest rate to a debt : <code>interest</code></a></li>
-<li><a href="#lists-all-transactions-which-deadline-is-closest-code-nexttransaction-code">3.14. Lists all transactions which deadline is closest: <code>nexttransaction</code></a></li>
-<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.15. Redoing the previously undone command : <code>redo</code></a></li>
-<li><a href="#removing-a-debt-code-remove-code">3.16. Removing a debt : <code>remove</code></a></li>
-<li><a href="#selecting-a-trasaction-code-select-code">3.17. Selecting a trasaction : <code>select</code></a></li>
-<li><a href="#sorting-transactions-code-sort-code">3.18. Sorting transactions : <code>sort</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">3.19. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#updating-a-transaction-code-update-code">3.20. Updating a transaction : <code>update</code></a></li>
+<li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
+<li><a href="#adding-a-transaction-code-add-code">3.2. Adding a transaction : <code>add</code></a></li>
+<li><a href="#uploading-deleting-a-photo-under-a-person-code-uploadp-code">3.3. Uploading/Deleting a photo under a person : <code>uploadp</code></a></li>
+<li><a href="#view-calendar-with-debt-deadlines-code-calendar-code">3.4. View calendar with debt deadlines : <code>calendar</code></a></li>
+<li><a href="#converting-multiple-currencies-code-convert-code">3.5. Converting multiple currencies: <code>convert</code></a></li>
+<li><a href="#calculating-interest-on-transactions-code-interest-code">3.6. Calculating interest on transactions: <code>interest</code></a></li>
+<li><a href="#updating-a-transaction-code-edit-code">3.7. Updating a transaction : <code>edit</code></a></li>
+<li><a href="#sorting-transactions-code-sort-code-to-be-implemented">3.8. Sorting transactions : <code>sort</code> (to be implemented)</a></li>
+<li><a href="#filtering-transactions-by-name-of-person-code-filter-code-to-be-implemented">3.9. Filtering transactions by name of person: <code>filter</code> (to be implemented)</a></li>
+<li><a href="#filtering-transactions-by-closest-deadline-code-nt-code">3.10. Filtering transactions by closest deadline: <code>nt</code></a></li>
+<li><a href="#locating-transactions-by-person-s-name-code-find-code">3.11. Locating transactions by person&#8217;s name : <code>find</code></a></li>
+<li><a href="#locating-transactions-by-substring-code-search-code">3.12. Locating transactions by substring : <code>search</code></a></li>
+<li><a href="#deleting-a-transaction-code-delete-code">3.13. Deleting a transaction : <code>delete</code></a></li>
+<li><a href="#selecting-a-transaction-code-select-code">3.14. Selecting a transaction : <code>select</code></a></li>
+<li><a href="#listing-all-recorded-expenses-code-history-code">3.15. Listing all recorded expenses : <code>history</code></a></li>
+<li><a href="#analyzing-a-possible-loan-amount-code-analytics-code">3.16. Analyzing a possible loan amount : <code>analytics</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code">3.17. Undoing previous command : <code>undo</code></a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.18. Redoing the previously undone command : <code>redo</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">3.19. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.20. Exiting the program : <code>exit</code></a></li>
 <li><a href="#saving-the-data">3.21. Saving the data</a></li>
 </ul>
 </li>
@@ -70,7 +70,8 @@ DT can keep a record of your loans and debts as fast as other apps, if not faste
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
 </li>
 <li>
-<p>Type the command in the command box and press Enter to execute it. e.g. typing help and pressing Enter will open the help window.</p>
+<p>Type the command in the command box and press Enter to execute it. e.g. typing help and pressing Enter
+will open the help window.</p>
 </li>
 </ol>
 </div>
@@ -83,88 +84,124 @@ DT can keep a record of your loans and debts as fast as other apps, if not faste
 <h2 id="Features"><a class="link" href="#Features">3. Features</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="adding-a-transaction-code-add-code"><a class="link" href="#adding-a-transaction-code-add-code">3.1. Adding a transaction : <code>add</code></a></h3>
+<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
 <div class="paragraph">
-<p>Adds a transaction to the database.
-Format: add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS d/DEBT dl/DEADLINE [t/TAG]…​</p>
+<p>Invokes the user guide for handy reference when typing commands.<br>
+Format: <code>help</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="analyse-the-your-financial-status-code-analytics-code"><a class="link" href="#analyse-the-your-financial-status-code-analytics-code">3.2. Analyse the your financial status : <code>analytics</code></a></h3>
+<h3 id="adding-a-transaction-code-add-code"><a class="link" href="#adding-a-transaction-code-add-code">3.2. Adding a transaction : <code>add</code></a></h3>
 <div class="paragraph">
-<p>Analyse the your financial status and generate your financial status to view.
-It will either generate your financial status base on all the list,
-or generate to a certain date, base on the date you input.
-Format: analytics​
-or
-Format: analytics​ DATE</p>
+<p>Adds a transaction to the database.<br>
+Format: add tt/TRANSACTION_TYPE ta/TRANSACTION_AMOUNT td/TRANSACTION_DEADLINE<br>
+n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.3. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="uploading-deleting-a-photo-under-a-person-code-uploadp-code"><a class="link" href="#uploading-deleting-a-photo-under-a-person-code-uploadp-code">3.3. Uploading/Deleting a photo under a person : <code>uploadp</code></a></h3>
 <div class="paragraph">
-<p>Clears all entries from the Debt Tracker.
-Format: clear</p>
+<p>May upload a photo to a person’s contact based on the index you input, or delete the photo from the index you input.
+For both methods the first input after the command word should be the index of the contact whose photo you wish to
+upload or delete.
+For uploading a photo, the second input after the command word should be "up/" followed by the file path to the image
+file.
+For deleting a photo, the second input after the command word should be "up/" followed by the word "delete".</p>
+</div>
+<div class="paragraph">
+<p>Formats:
+To upload a photo: uploadp ind/[INDEX] up/[FILE_PATH]
+To delete a photo: uploadp ind/[INDEX] up/delete</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="currency-conversion-of-transaction-amounts-code-convert-code"><a class="link" href="#currency-conversion-of-transaction-amounts-code-convert-code">3.4. Currency conversion of transaction amounts: <code>convert</code></a></h3>
+<h3 id="view-calendar-with-debt-deadlines-code-calendar-code"><a class="link" href="#view-calendar-with-debt-deadlines-code-calendar-code">3.4. View calendar with debt deadlines : <code>calendar</code></a></h3>
 <div class="paragraph">
-<p>Converts the transaction amounts from their respective foreign currencies to Singapore Dollars.
-Format: convert</p>
+<p>Displays a Google calendar showing the user&#8217;s transactions and their deadlines.
+This command can only be used with any one of the following keywords: show; login; logout.
+This feature requires linking the deadlines to your Google account.</p>
+</div>
+<div class="paragraph">
+<p>Formats:
+To show calendar in the app: calendar show
+To login to your Google account: calendar login
+To logout of your Google account: calendar logout</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-transaction-code-delete-code"><a class="link" href="#deleting-a-transaction-code-delete-code">3.5. Deleting a transaction : <code>delete</code></a></h3>
+<h3 id="converting-multiple-currencies-code-convert-code"><a class="link" href="#converting-multiple-currencies-code-convert-code">3.5. Converting multiple currencies: <code>convert</code></a></h3>
+<div class="paragraph">
+<p>Converts amounts in multiple different foreign currencies to their respective amounts in<br>
+the base currency, Singapore Dollars.
+Format: convert FIRST_AMOUNT [MORE_AMOUNTS]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="calculating-interest-on-transactions-code-interest-code"><a class="link" href="#calculating-interest-on-transactions-code-interest-code">3.6. Calculating interest on transactions: <code>interest</code></a></h3>
+<div class="paragraph">
+<p>Calculates interest on transaction filtered by name(s) based on the interest rate provided.
+Format: interest SCHEME INTEREST_RATE FIRST_NAME [MORE_NAMES]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="updating-a-transaction-code-edit-code"><a class="link" href="#updating-a-transaction-code-edit-code">3.7. Updating a transaction : <code>edit</code></a></h3>
+<div class="paragraph">
+<p>Edit an existing transaction’s details.
+Format: edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sorting-transactions-code-sort-code-to-be-implemented"><a class="link" href="#sorting-transactions-code-sort-code-to-be-implemented">3.8. Sorting transactions : <code>sort</code> (to be implemented)</a></h3>
+<div class="paragraph">
+<p>Sort transactions by principal sum, deadline of payment or type of transactor (debtor/lender).<br>
+Format: sort [t/TAG]&#8230;&#8203;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filtering-transactions-by-name-of-person-code-filter-code-to-be-implemented"><a class="link" href="#filtering-transactions-by-name-of-person-code-filter-code-to-be-implemented">3.9. Filtering transactions by name of person: <code>filter</code> (to be implemented)</a></h3>
+<div class="paragraph">
+<p>Filter transactions by names of the contacts.
+Format: filter FIRST_NAME [MORE_NAMES]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filtering-transactions-by-closest-deadline-code-nt-code"><a class="link" href="#filtering-transactions-by-closest-deadline-code-nt-code">3.10. Filtering transactions by closest deadline: <code>nt</code></a></h3>
+<div class="paragraph">
+<p>Filtering and listing out the transaction(s) which deadlines are closest to the current date.
+"nt" stands for NextTransaction.
+Format: nt</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="locating-transactions-by-person-s-name-code-find-code"><a class="link" href="#locating-transactions-by-person-s-name-code-find-code">3.11. Locating transactions by person&#8217;s name : <code>find</code></a></h3>
+<div class="paragraph">
+<p>Finds transactions under a person whose name contains any of the given keywords.
+Format: find NAME [MORE_NAMES]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="locating-transactions-by-substring-code-search-code"><a class="link" href="#locating-transactions-by-substring-code-search-code">3.12. Locating transactions by substring : <code>search</code></a></h3>
+<div class="paragraph">
+<p>Finds transactions under a person whose first name or last name contains the substring input by user.
+Format: search SUBSTRING</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-transaction-code-delete-code"><a class="link" href="#deleting-a-transaction-code-delete-code">3.13. Deleting a transaction : <code>delete</code></a></h3>
 <div class="paragraph">
 <p>Deletes the specified transaction from the address book.
 Format: delete INDEX</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-transaction-code-edit-code"><a class="link" href="#editing-a-transaction-code-edit-code">3.6. Editing a transaction : <code>edit</code></a></h3>
+<h3 id="selecting-a-transaction-code-select-code"><a class="link" href="#selecting-a-transaction-code-select-code">3.14. Selecting a transaction : <code>select</code></a></h3>
 <div class="paragraph">
-<p>Edits the fields of a particular transaction indentified by INDEX (must be a positive integer).
-Format: edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]</p>
+<p>Selects the transaction identified by the index number used in the displayed transaction list.
+Format: select INDEX</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.7. Exiting the program : <code>exit</code></a></h3>
-<div class="paragraph">
-<p>Exits the program.
-Format: clear</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="filtering-transactions-code-filter-code"><a class="link" href="#filtering-transactions-code-filter-code">3.8. Filtering transactions: <code>filter</code></a></h3>
-<div class="paragraph">
-<p>Filter people out by whether they are a debtor or a creditor.
-Format: filter [t/TAG]&#8230;&#8203;</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="locating-transactions-by-transaction-s-name-code-find-code"><a class="link" href="#locating-transactions-by-transaction-s-name-code-find-code">3.9. Locating transactions by transaction&#8217;s name : <code>find</code></a></h3>
-<div class="paragraph">
-<p>Finds transactions exchanged with any transaction whose name contains any of the given keywords.
-Format: find KEYWORD [MORE_KEYWORDS]</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.10. Viewing help : <code>help</code></a></h3>
-<div class="paragraph">
-<p>Invokes the user guide for handy reference when typing commands.
-Format: <code>help</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="hiding-transactions-with-a-private-contact-code-hide-code"><a class="link" href="#hiding-transactions-with-a-private-contact-code-hide-code">3.11. Hiding transactions with a private contact : <code>hide</code></a></h3>
-<div class="paragraph">
-<p>Makes transactions exchanged with people tagged as private invisible. Can be toggled.
-Format: hide n/NAME</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="listing-all-recorded-expenses-code-history-code"><a class="link" href="#listing-all-recorded-expenses-code-history-code">3.12. Listing all recorded expenses : <code>history</code></a></h3>
+<h3 id="listing-all-recorded-expenses-code-history-code"><a class="link" href="#listing-all-recorded-expenses-code-history-code">3.15. Listing all recorded expenses : <code>history</code></a></h3>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.</p>
 </div>
@@ -174,61 +211,38 @@ Format: history</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-interest-rate-to-a-debt-code-interest-code"><a class="link" href="#adding-interest-rate-to-a-debt-code-interest-code">3.13. Adding interest rate to a debt : <code>interest</code></a></h3>
+<h3 id="analyzing-a-possible-loan-amount-code-analytics-code"><a class="link" href="#analyzing-a-possible-loan-amount-code-analytics-code">3.16. Analyzing a possible loan amount : <code>analytics</code></a></h3>
 <div class="paragraph">
-<p>Adds an interest amount to all transactions based on the interest scheme and interest rate you input.
-Format: interest INTEREST_SCHEME INTEREST_RATE</p>
+<p>Analyses the amount you have left after taking into consideration your loans, and the amount that you can loan out.
+Format: analytics</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="lists-all-transactions-which-deadline-is-closest-code-nexttransaction-code"><a class="link" href="#lists-all-transactions-which-deadline-is-closest-code-nexttransaction-code">3.14. Lists all transactions which deadline is closest: <code>nexttransaction</code></a></h3>
-<div class="paragraph">
-<p>Finds and lists all transactions in the database which deadline is closest to current date.
-Format: nexttransaction</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.15. Redoing the previously undone command : <code>redo</code></a></h3>
-<div class="paragraph">
-<p>Reverses the most recent undo command.
-Format: redo</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="removing-a-debt-code-remove-code"><a class="link" href="#removing-a-debt-code-remove-code">3.16. Removing a debt : <code>remove</code></a></h3>
-<div class="paragraph">
-<p>Remove away a number of debts from one transaction recorded in the DT using click-and-drag.
-The number of debts removed is up to the user’s selection.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="selecting-a-trasaction-code-select-code"><a class="link" href="#selecting-a-trasaction-code-select-code">3.17. Selecting a trasaction : <code>select</code></a></h3>
-<div class="paragraph">
-<p>Selects the transaction identified by the index number used in the displayed transaction list.
-Format: select INDEX</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sorting-transactions-code-sort-code"><a class="link" href="#sorting-transactions-code-sort-code">3.18. Sorting transactions : <code>sort</code></a></h3>
-<div class="paragraph">
-<p>Sort people by the amount of money loaned to or from them, the deadlines of the debts
-(be it whether you owe them or money or vice versa), or whether they are debtors or
-creditors.
-Format: sort [t/TAG]&#8230;&#8203;</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.19. Undoing previous command : <code>undo</code></a></h3>
+<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.17. Undoing previous command : <code>undo</code></a></h3>
 <div class="paragraph">
 <p>Restores the address book to the state before the previous undoable command was executed.<br>
 Format: undo</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="updating-a-transaction-code-update-code"><a class="link" href="#updating-a-transaction-code-update-code">3.20. Updating a transaction : <code>update</code></a></h3>
+<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.18. Redoing the previously undone command : <code>redo</code></a></h3>
 <div class="paragraph">
-<p>Edit an existing transaction’s details.
-Format: edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​</p>
+<p>Reverses the most recent undo command.
+Format: redo</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.19. Clearing all entries : <code>clear</code></a></h3>
+<div class="paragraph">
+<p>Clears all entries from the Debt Tracker.
+Format: clear</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.20. Exiting the program : <code>exit</code></a></h3>
+<div class="paragraph">
+<p>Exits the program.
+Format: clear</p>
 </div>
 </div>
 <div class="sect2">
@@ -243,7 +257,7 @@ Format: edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​</p>
 <h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Q: How do I transfer my data to another Computer?<br>
+<p>Q: How do I transfer my data to another Computer?
 A: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
 </div>
 </div>
@@ -252,69 +266,79 @@ A: Install the app in the other computer and overwrite the empty data file it cr
 <h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Add: add tt/TRANSACTION_TYPE ta/TRANSACTION_AMOUNT td/TRANSACTION_DEADLINE<br>
-         n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​<br>
-e.g. add tt/Loan ta/SGD 50.00 td/24/11/2018 n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend</p>
+<p>Add : add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS d/DEBT dl/DEADLINE [t/TAG]…​
+e.g. add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665  d/+500.00 dl/20 09 2019 t/friend t/colleague</p>
 </div>
 <div class="paragraph">
-<p>Analytics​: analytics​ or analytics​ Date
-e.g. analytics​ or analytics​ 12/12/2018</p>
+<p>Uploadp : uploadp ind/INDEX up/FILE_PATH
+e.g. uploadp ind/3 up/Users/Photo.png
+OR: uploadp ind/INDEX up/delete
+e.g. uploadp ind/1 up/delete</p>
 </div>
 <div class="paragraph">
-<p>Clear : clear</p>
+<p>Calendar : calendar show
+OR: calendar login
+OR: calendar logout</p>
 </div>
 <div class="paragraph">
-<p>Convert: convert</p>
+<p>Convert : convert FIRST_AMOUNT [MORE_AMOUNTS]
+e.g. convert USD 20.00 AUD 35.40 MYR 152.60</p>
 </div>
 <div class="paragraph">
-<p>Delete : delete INDEX<br>
+<p>Interest : int/INTEREST_RATE
+e.g. int/1.10</p>
+</div>
+<div class="paragraph">
+<p>Update : update INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] d/DEBT dl/DEADLINE [t/TAG]…​
+e.g. edit 2 n/James Lee e/jameslee@example.com</p>
+</div>
+<div class="paragraph">
+<p>Sort : sort [t/TAG]&#8230;&#8203;
+E.g. sort t/creditor</p>
+</div>
+<div class="paragraph">
+<p>Filter : filter[t/TAG]&#8230;&#8203;
+e.g. filter t/debtor</p>
+</div>
+<div class="paragraph">
+<p>Nt (NextTransaction) : nt</p>
+</div>
+<div class="paragraph">
+<p>Find : find KEYWORD [MORE_KEYWORDS]
+e.g. find James Jake</p>
+</div>
+<div class="paragraph">
+<p>Search : search SUBSTRING
+e.g. search Be</p>
+</div>
+<div class="paragraph">
+<p>Delete : delete INDEX
 e.g. delete 3</p>
 </div>
 <div class="paragraph">
-<p>Edit: edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]
-e.g. edit 1 p/91234567 e/jondoe@example.com</p>
-</div>
-<div class="paragraph">
-<p>Help : help</p>
-</div>
-<div class="paragraph">
-<p>Hide : hide n/NAME<br>
-e.g. hide n/Shawn</p>
+<p>Select : select INDEX
+e.g.select 2</p>
 </div>
 <div class="paragraph">
 <p>History : history</p>
 </div>
 <div class="paragraph">
-<p>Interest: interest INTEREST_RATE INTEREST_SCHEME<br>
-e.g. interest simple 1.1%</p>
+<p>Analytics : analytics</p>
 </div>
 <div class="paragraph">
-<p>List : list</p>
-</div>
-<div class="paragraph">
-<p>Filter: filter[t/TAG]&#8230;&#8203;<br>
-E.g. filter t/debtor</p>
-</div>
-<div class="paragraph">
-<p>Find : find KEYWORD [MORE_KEYWORDS]<br>
-e.g. find James Jake</p>
-</div>
-<div class="paragraph">
-<p>Next Transaction : nexttransaction</p>
+<p>Undo : undo</p>
 </div>
 <div class="paragraph">
 <p>Redo : redo</p>
 </div>
 <div class="paragraph">
-<p>Select : select INDEX<br>
-e.g.select 2</p>
+<p>Clear : clear</p>
 </div>
 <div class="paragraph">
-<p>Sort: sort [t/TAG]&#8230;&#8203;<br>
-E.g. sort t/creditor</p>
+<p>List : list</p>
 </div>
 <div class="paragraph">
-<p>Undo : undo</p>
+<p>Help : help</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 04:56:07 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 10:43:39 UTC</div></div></div></body></html>
