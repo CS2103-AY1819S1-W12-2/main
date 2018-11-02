@@ -15,7 +15,7 @@
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
 <li><a href="#adding-a-transaction-code-add-code">3.2. Adding a transaction : <code>add</code></a></li>
-<li><a href="#uploading-deleting-a-photo-under-a-person-code-uploadp-code">3.3. Uploading/Deleting a photo under a person : <code>uploadp</code></a></li>
+<li><a href="#uploading-deleting-a-photo-under-a-person-code-uploadp-code-to-be-implemented">3.3. Uploading/Deleting a photo under a person : <code>uploadp</code> (TO BE IMPLEMENTED)</a></li>
 <li><a href="#view-calendar-with-debt-deadlines-code-calendar-code">3.4. View calendar with debt deadlines : <code>calendar</code></a></li>
 <li><a href="#converting-multiple-currencies-code-convert-code">3.5. Converting multiple currencies: <code>convert</code></a></li>
 <li><a href="#calculating-interest-on-transactions-code-interest-code">3.6. Calculating interest on transactions: <code>interest</code></a></li>
@@ -61,7 +61,7 @@ DT can keep a record of your loans and debts as fast as other apps, if not faste
 <p>Ensure you have Java version 9 or later installed in your Computer.<br></p>
 </li>
 <li>
-<p>Download the latest <a href="https://github.com/se-edu/addressbook-level4/releases">debttracker.jar</a>.<br></p>
+<p>Download the latest <a href="https://cs2103-ay1819s1-w12-2.github.io/main//releases">debttracker.jar</a>.<br></p>
 </li>
 <li>
 <p>Copy the file to the folder you want to use as the home folder for the application.<br></p>
@@ -80,6 +80,31 @@ will open the help window.</p>
 <div class="sect1">
 <h2 id="Features"><a class="link" href="#Features">3. Features</a></h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Commands that make use of the transaction amounts such as filter, analytics and interest can be used
+      properly only after the convert command is executed first<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The command words are case-sensitive.<br>
+</td>
+</tr>
+</table>
+</div>
 <div class="sect2">
 <h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
 <div class="paragraph">
@@ -95,21 +120,124 @@ will open the help window.</p>
 <p>Adds a transaction to the current transaction list in the database.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: add tt/TRANSACTION_TYPE ta/TRANSACTION_AMOUNT td/TRANSACTION_DEADLINE<br>
-n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…</p>
+<p>Conditions:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The transaction&#8217;s attributes are case sensitive.</p>
+</li>
+<li>
+<p>The transaction type can only be a loan or a debt<br></p>
+<div class="literalblock">
+<div class="content">
+<pre>E.g. tt/loan OR tt/debt</pre>
+</div>
+</div>
+</li>
+<li>
+<p>The transaction amount must be prefixed with a three-letter currency code (such as SGD)<br>
+and then with a value that is a real number rounded to two decimal places (even with a<br>
+trailing zero)</p>
+<div class="literalblock">
+<div class="content">
+<pre>E.g. ta/SGD 45.20 is valid
+     ta/SGD 45.3 is not valid (Only one digit after the decimal point)
+     ta/IN 56.75 is not valid (The currency code must consist of 3 letters as per ISO 3166 standard)</pre>
+</div>
+</div>
+</li>
+<li>
+<p>The transaction deadline must be a valid date according to the Gregorian Calendar<br>
+following the DD/MM/YYYY format and should be a date in the future.<br></p>
+<div class="literalblock">
+<div class="content">
+<pre>E.g. If the date of use of the application is 2nd November 2018:
+     td/25/12/2018 is valid
+     td/30/10/2018 is not valid (It's a date that is in the past)
+     td/29/02/2018 is not valid (It's not a valid date according to the Gregorian Calendar)</pre>
+</div>
+</div>
+</li>
+<li>
+<p>A person&#8217;s name should only contain alphanumeric characters and spaces, and should not be blank.<br></p>
+</li>
+<li>
+<p>A person&#8217;s phone number should consist of only digits, with a minimum of 3 digits<br></p>
+</li>
+<li>
+<p>A person&#8217;s email address should be of the format local-part@domain and adhere to the following constraints:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The local-part should only contain alphanumeric characters and these special characters, excluding the parentheses.</p>
+</li>
+<li>
+<p>This is followed by a '@' and then a domain name. "</p>
+</li>
+<li>
+<p>The domain name must:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>be at least 2 characters long\n"</p>
+</li>
+<li>
+<p>start and end with alphanumeric characters\n"</p>
+</li>
+<li>
+<p>consist of alphanumeric characters, a period or a hyphen for the characters in between, if any.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>A person&#8217;s address can take any values but must not be blank.</p>
+</li>
+<li>
+<p>The tags associated with a person must be alphanumeric</p>
+</li>
+<li>
+<p>If the tokens such as tt/ or ta/ are repeated several times and contain valid values, then the last value is
+considered.</p>
+</li>
+<li>
+<p>Duplicate transactions consist of same type, amount, deadline and person.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A duplicate person is a person with the same name and same email or phone number as another person in the
+database.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>e.g. add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665  d/+500.00 dl/20 09 2019 t/friend t/colleague</p>
+<p>Format: <br></p>
+</div>
+<div class="paragraph">
+<p>add tt/TYPE ta/AMOUNT td/DEADLINE n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…<br></p>
+</div>
+<div class="paragraph">
+<p>E.g. add tt/loan ta/SGD 50.00 td/18/12/2018 n/James Ho p/22224444 e/jamesho@example.com<br>
+a/123, Clementi Rd, 1234665 t/friends</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="uploading-deleting-a-photo-under-a-person-code-uploadp-code"><a class="link" href="#uploading-deleting-a-photo-under-a-person-code-uploadp-code">3.3. Uploading/Deleting a photo under a person : <code>uploadp</code></a></h3>
+<h3 id="uploading-deleting-a-photo-under-a-person-code-uploadp-code-to-be-implemented"><a class="link" href="#uploading-deleting-a-photo-under-a-person-code-uploadp-code-to-be-implemented">3.3. Uploading/Deleting a photo under a person : <code>uploadp</code> (TO BE IMPLEMENTED)</a></h3>
 <div class="paragraph">
 <p>Uploads a photo to a person’s contact or deletes a photo from a person&#8217;s contact based on the index inputted.<br></p>
 </div>
 <div class="paragraph">
-<p>Formats:<br>
-To upload a photo: uploadp [INDEX] up/[FILE_PATH]<br>
+<p>Formats:<br></p>
+</div>
+<div class="paragraph">
+<p>To upload a photo: uploadp [INDEX] up/[FILE_PATH]<br>
 To delete a photo: uploadp [INDEX] up/delete</p>
 </div>
 <div class="paragraph">
@@ -120,16 +248,42 @@ To delete a photo: uploadp [INDEX] up/delete</p>
 <div class="sect2">
 <h3 id="view-calendar-with-debt-deadlines-code-calendar-code"><a class="link" href="#view-calendar-with-debt-deadlines-code-calendar-code">3.4. View calendar with debt deadlines : <code>calendar</code></a></h3>
 <div class="paragraph">
-<p>Displays a Google calendar showing the user&#8217;s transactions and their deadlines.<br>
-This command can only be used with any one of the following keywords: 1) show  2) login 3)logout.<br>
-This feature requires linking the deadlines to your Google account.<br></p>
+<p>Displays a Google calendar showing the user&#8217;s transactions and their deadlines.<br></p>
 </div>
 <div class="paragraph">
-<p>Formats:<br>
-To show calendar in the app: calendar show<br>
-To login to your Google account: calendar login<br>
-To logout of your Google account: calendar logout<br>
-To manually synchronise the user&#8217;s transactions with the calendar: calendar sync</p>
+<p>Conditions:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>This command can only be used with one of the following keywords: 1) show  2) login 3)logout.<br></p>
+</li>
+<li>
+<p>The keywords are case-sensitive.</p>
+</li>
+<li>
+<p>This feature requires linking the deadlines to your Google account. Hence a test google account will be provided.<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Formats:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To show calendar in the app: calendar show<br></p>
+</li>
+<li>
+<p>To login to your Google account: calendar login<br></p>
+</li>
+<li>
+<p>To logout of your Google account: calendar logout<br></p>
+</li>
+<li>
+<p>To manually synchronise the user&#8217;s transactions with the calendar: calendar sync</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -137,6 +291,18 @@ To manually synchronise the user&#8217;s transactions with the calendar: calenda
 <div class="paragraph">
 <p>Converts amounts in multiple different foreign currencies to their respective amounts in<br>
 the base currency, Singapore Dollars.<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Makes use of an external foreign currency API: <a href="https://free.currencyconverterapi.com/">Free Currency Converter API</a>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Format: convert</p>
@@ -148,7 +314,20 @@ the base currency, Singapore Dollars.<br></p>
 <p>Calculates interest on transaction based on the interest rate and scheme provided.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: interest INTEREST_SCHEME INTEREST_RATE</p>
+<p>Conditions:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Interest scheme must be either simple or compound. These keywords are case-insensitive.<br></p>
+</li>
+<li>
+<p>An interest rate must be entered in percentage with the value being a real number.<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Format: interest INTEREST_SCHEME INTEREST_RATE<br></p>
 </div>
 <div class="paragraph">
 <p>e.g. interest simple 1.1%</p>
@@ -160,42 +339,110 @@ the base currency, Singapore Dollars.<br></p>
 <p>Edits an existing transaction’s details.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…</p>
+<p>Conditions:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>An index must be provided identifying a transaction and that index must be an integer ranging from 1 to the size
+of the transaction list displayed</p>
+</li>
+<li>
+<p>Attributes such as name, phone and email are optional</p>
+</li>
+<li>
+<p>The attributes are case sensitive</p>
+</li>
+<li>
+<p>The attributes should follow the format specified in the add command.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>e.g. edit 2 n/James Lee e/jameslee@example.com</p>
+<p>Format:</p>
+</div>
+<div class="paragraph">
+<p>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…<br></p>
+</div>
+<div class="paragraph">
+<p>E.g. edit 2 n/James Lee e/jameslee@example.com</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="sorting-transactions-code-sort-code"><a class="link" href="#sorting-transactions-code-sort-code">3.8. Sorting transactions : <code>sort</code></a></h3>
 <div class="paragraph">
-<p>Sorts transactions by principal sum, deadline of payment, type of transactor (debtor/lender)<br>
-if the respective parameters are provided. If the user provides an empty or invalid sort<br>
-parameter then the transaction gets sorted by default parameter, person name and the tie<br>
-is broken using phone or email.<br></p>
+<p>Sorts transactions based on an input or default parameter.</p>
 </div>
 <div class="paragraph">
-<p>Format: sort SORT_PARAMETER</p>
+<p>Conditions:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Valid sort parameters are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>amount</p>
+</li>
+<li>
+<p>type</p>
+</li>
+<li>
+<p>deadline</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The sort parameters are case-insensitive.</p>
+</li>
+<li>
+<p>If a parameter other than the listed ones is provided or the parameter is not provided at all,
+then the application assumes that you want to sort by the default parameter, the person name
+and the tie is broken using the phone number or email address.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>e.g. sort type<br>
-OR sort amount<br>
-OR sort deadline<br></p>
+<p>Format:<br></p>
+</div>
+<div class="paragraph">
+<p>sort SORT_PARAMETER<br></p>
+</div>
+<div class="paragraph">
+<p>E.g. sort type OR<br>
+     sort amount OR<br>
+     sort deadline<br></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="filtering-transactions-by-various-criteria-code-filter-code"><a class="link" href="#filtering-transactions-by-various-criteria-code-filter-code">3.9. Filtering transactions by various criteria: <code>filter</code></a></h3>
 <div class="paragraph">
-<p>Filters transactions matching specified criteria.<br>
-NOTE: Filtering by amount works correctly only after currency conversion,
-otherwise it filters only by the numerical values (not taking currency into consideration).</p>
+<p>Filters transactions matching specified criteria.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: filter [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [tt/TYPE] [ta/AMOUNT] [td/DEADLINE]<br></p>
+<p>Conditions:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It is optional to provide the criteria.<br></p>
+</li>
+<li>
+<p>The respective parameters should follow the format specified in the add command.<br></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>e.g. filter t/debtor<br>
-OR filter t/debtor tamin/SGD 50.00 tamax/SGD 100.00 tdmin/05/06/2018 tdmax/31/12/2018</p>
+<p>Format: <br></p>
+</div>
+<div class="paragraph">
+<p>filter [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [tt/TYPE] [ta/AMOUNT] [td/DEADLINE]<br></p>
+</div>
+<div class="paragraph">
+<p>e.g. filter t/debtor OR<br>
+     filter t/debtor tamin/SGD 50.00 tamax/SGD 100.00 tdmin/05/06/2018 tdmax/31/12/2018</p>
 </div>
 </div>
 <div class="sect2">
@@ -211,7 +458,17 @@ OR filter t/debtor tamin/SGD 50.00 tamax/SGD 100.00 tdmin/05/06/2018 tdmax/31/12
 <div class="sect2">
 <h3 id="locating-transactions-by-substring-code-search-code"><a class="link" href="#locating-transactions-by-substring-code-search-code">3.11. Locating transactions by substring : <code>search</code></a></h3>
 <div class="paragraph">
-<p>Finds transactions under a person whose first name or last name contains the substring input by user.<br></p>
+<p>Matches the inputted substring with the names of persons involved in transactions.<br></p>
+</div>
+<div class="paragraph">
+<p>Conditions:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The substring must be within the first or last name of a person involved, otherwise an empty list will be returned.<br></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Format: search SUBSTRING</p>
@@ -265,7 +522,7 @@ OR filter t/debtor tamin/SGD 50.00 tamax/SGD 100.00 tdmin/05/06/2018 tdmax/31/12
 <div class="sect2">
 <h3 id="marking-a-transaction-as-paid-code-paid-code-to-be-implemented"><a class="link" href="#marking-a-transaction-as-paid-code-paid-code-to-be-implemented">3.16. Marking a transaction as Paid : <code>paid</code> (TO BE IMPLEMENTED)</a></h3>
 <div class="paragraph">
-<p>Deletes a transaction (that has been paid off) from the current transactions list, and adds it to the past transactions list.</p>
+<p>Deletes a transaction (that has been paid off) from the current transactions list, and adds it to the past transactions list.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: paid</p>
@@ -274,7 +531,7 @@ OR filter t/debtor tamin/SGD 50.00 tamax/SGD 100.00 tdmin/05/06/2018 tdmax/31/12
 <div class="sect2">
 <h3 id="viewing-past-transactions-code-past-code-to-be-implemented"><a class="link" href="#viewing-past-transactions-code-past-code-to-be-implemented">3.17. Viewing past transactions : <code>past</code> (TO BE IMPLEMENTED)</a></h3>
 <div class="paragraph">
-<p>Provides a list of transactions, previously recorded in the current transactions list, marked as paid by the Paid command.</p>
+<p>Provides a list of transactions, previously recorded in the current transactions list, marked as paid by the Paid command.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: past</p>
@@ -341,7 +598,8 @@ A: Install the app in the other computer and overwrite the empty data file it cr
 <p>Add : add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS d/DEBT dl/DEADLINE [t/TAG]…<br></p>
 </div>
 <div class="paragraph">
-<p>e.g. add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665  d/+500.00 dl/20 09 2019 t/friend t/colleague</p>
+<p>e.g. add tt/loan ta/SGD 50.00 td/18/12/2018 n/James Ho p/22224444 e/jamesho@example.com<br>
+     a/123, Clementi Rd, 1234665 t/friends</p>
 </div>
 <div class="paragraph">
 <p>Uploadp : uploadp INDEX up/FILE_PATH [For uploading a picture]<br>
@@ -435,4 +693,4 @@ OR filter n/Alex e/example.com tt/debt tamin/SGD 10.00 tdmax/31/12/2018</p>
 <p>Help : help</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 13:59:18 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-02 01:13:40 UTC</div></div></div></body></html>
