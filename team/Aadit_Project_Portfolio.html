@@ -1,0 +1,219 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Aadit Kamat - Project Portfolio</title><link rel="stylesheet" href="./gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">DebtTracker</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S1-W12-2/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Aadit Kamat - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-debttracker"><a class="link" href="#project-debttracker">PROJECT: DebtTracker</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Debt Tracker is a CLI-based desktop application that helps users manage their finances. It keeps track of the financial
+transactions the user undertakes. The primary target audience of this application is Small and Medium Entreprises (SMEs) in Singapore since
+they typically face budget constraints and have to maintain a good credit score. However, this application can also be used by individuals
+who may want to maintain a database of their personal transactions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: added <strong>a currency conversion utility</strong> within the application</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: allows the user to convert amounts in different currencies to their respective amounts in the base currency, Singapore Dollars</p>
+</li>
+<li>
+<p>Justification: This feature provides users the flexibility to transact with people from different countries and saves them the hassle of using a 3rd party software to convert the amounts for each transaction.</p>
+</li>
+<li>
+<p>Highlights: The implementation makes use of a free external foreign exchange API, provided by <a href="https://free.currencyconverterapi.com">Free Currency Converter API</a> that updates every hour according to the latest currency trends.
+Since the API is JSON-based, the more time consuming portion of adding the command was using the right library to parse the information
+in an appropriate format.</p>
+</li>
+<li>
+<p>Code contributed: [<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/51/files">Functional Code Block #1</a>] [<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/36/files">Functional Code Block #2</a>] [<a href="https://github.com/CS2103-AY1819S1-W12-2/main/blob/master/src/test/java/seedu/address/logic/commands/ConvertCommandTest.java">Test code</a>]</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: added <strong>an interest calculation feature</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: allows the user to obtain the final amount that needs to be payed after calculating the interest on the principal sum of each
+transaction on a monthly basis, using either the simple or the compound interest scheme.</p>
+</li>
+<li>
+<p>Justification: Providing an in-built feature to calculate interests is essential since loans are usually charged the market interest rate and the user
+needs to be aware of the final sum of the money owed or lent before the deadline.</p>
+</li>
+<li>
+<p>Code contributed: [<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/72/files">Functional Code</a>] [<a href="https://github.com/CS2103-AY1819S1-W12-2/main/blob/master/src/test/java/seedu/address/logic/commands/SortCommandTest.java">Test code</a>]</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Managed releases <code>v1.1</code> - <code>v1.3</code> (3 releases) on GitHub</p>
+</li>
+<li>
+<p>Managed merging of PRs into the master branch as an administrator</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Testing:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Modified tests to handle change from Person model to Transaction model within the application<br>
+[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/46">Pull Request #46</a>]<br></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Added the User Stories within the Developer Guide<br>
+[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/3">Pull Request #3</a>]<br></p>
+</li>
+<li>
+<p>Updated the relevant sections of the User Guide to reflect the current state of the application<br>
+[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/3">Pull Request #3</a>]<br></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/34/">Pull Request #34</a>]<br></p>
+</li>
+<li>
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/61/">Pull Request #61</a>]<br></p>
+</li>
+<li>
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/68/">Pull Request #68</a>]<br></p>
+</li>
+<li>
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/88/">Pull Request #88</a>]<br></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Issues created:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/issues/94">Issue #94</a>]<br></p>
+</li>
+<li>
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/issues/93">Issue #93</a>]<br></p>
+</li>
+<li>
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/issues/90">Issue #90</a>]<br></p>
+</li>
+<li>
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/issues/74">Issue #74</a>]<br></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tools:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Integrated Travis and AppVeyor into the project</p>
+</li>
+<li>
+<p>Added Coveralls to check the test coverage for the application</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/commit/726e9b1bf4b8f2138b63e63ca6788ff805dc824e?short_path=d80058c#diff-d80058c033b9f127ec727c18cc84ce4d">Pull Request#43</a>]<br></p>
+</div>
+<div class="paragraph">
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/commit/06243a33fee9c981b1367dfdeb1df0c95bdb0672?short_path=d80058c#diff-d80058c033b9f127ec727c18cc84ce4d">Pull Request #75</a>]<br></p>
+</div>
+<div class="paragraph">
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/commit/63fdda59f6104aec9cac6ff4b762add500a2fd35?short_path=d80058c#diff-d80058c033b9f127ec727c18cc84ce4d">Pull Request #95</a>]<br></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/commit/5d42ebc0d2396551b96b92f769114ac8482faca3#diff-d23c8091515dc18149f4f2e759e1e288">Pull Request #3</a>]<br></p>
+</div>
+<div class="paragraph">
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/commit/96470f5e35192a5450fac8d7a805c05736d1a7d4?short_path=d23c809#diff-d23c8091515dc18149f4f2e759e1e288">Pull Request #9</a>]<br></p>
+</div>
+<div class="paragraph">
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/commit/726e9b1bf4b8f2138b63e63ca6788ff805dc824e#diff-d23c8091515dc18149f4f2e759e1e288">Pull Request #43</a>]<br></p>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 07:49:48 UTC</div></div></div></body></html>
