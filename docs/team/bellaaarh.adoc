@@ -183,4 +183,4 @@ Extensions:
 
 ''''
 **Developer Guide-Related Pull Requests:**
-[[Pull Request #121]] +
+[https://github.com/CS2103-AY1819S1-W12-2/main/pull/135/files[Pull Request #135]] +
