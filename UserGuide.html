@@ -22,7 +22,7 @@
 <li><a href="#updating-a-transaction-code-edit-code">3.7. Updating a transaction : <code>edit</code></a></li>
 <li><a href="#sorting-transactions-code-sort-code">3.8. Sorting transactions : <code>sort</code></a></li>
 <li><a href="#filtering-transactions-by-various-criteria-code-filter-code">3.9. Filtering transactions by various criteria: <code>filter</code></a></li>
-<li><a href="#filtering-transactions-by-closest-deadline-code-nt-code">3.10. Filtering transactions by closest deadline: <code>nt</code></a></li>
+<li><a href="#filtering-transactions-by-closest-deadline-code-nexttransaction-code">3.10. Filtering transactions by closest deadline: <code>nexttransaction</code></a></li>
 <li><a href="#locating-transactions-by-substring-code-search-code">3.11. Locating transactions by substring : <code>search</code></a></li>
 <li><a href="#deleting-a-transaction-code-delete-code">3.12. Deleting a transaction : <code>delete</code></a></li>
 <li><a href="#selecting-a-transaction-code-select-code">3.13. Selecting a transaction : <code>select</code></a></li>
@@ -587,14 +587,18 @@ Use the convert command before filtering if a comparison between different curre
 <p>To filter transactions that have addresses containing 'tampines' or 'geylang' OR are tagged with the 'family' tag:<br>
 <code>filter a/tampines;geylang t/family or/</code></p>
 </li>
+<li>
+<p>To filter transactions that have addresses containing 'tampines' or 'geylang' OR are tagged with the 'family' tag:<br>
+<code>filter a/tampines;geylang t/family or/</code></p>
+</li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="filtering-transactions-by-closest-deadline-code-nt-code"><a class="link" href="#filtering-transactions-by-closest-deadline-code-nt-code">3.10. Filtering transactions by closest deadline: <code>nt</code></a></h3>
+<h3 id="filtering-transactions-by-closest-deadline-code-nexttransaction-code"><a class="link" href="#filtering-transactions-by-closest-deadline-code-nexttransaction-code">3.10. Filtering transactions by closest deadline: <code>nexttransaction</code></a></h3>
 <div class="paragraph">
 <p>Filtering and listing out the transaction(s) which deadlines are closest to the current date.<br>
-"nt" stands for NextTransaction.<br></p>
+So user would immediately know when is the next transaction.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: nt</p>
@@ -677,10 +681,8 @@ OR select past 2</p>
 <div class="sect2">
 <h3 id="analyzing-a-possible-loan-amount-code-analytics-code"><a class="link" href="#analyzing-a-possible-loan-amount-code-analytics-code">3.15. Analyzing a possible loan amount : <code>analytics</code></a></h3>
 <div class="paragraph">
-<p>Analyses the amount you have left after taking into consideration your loans, and the amount that you can loan out. A positive amounts indicate a healthy financial balance with a negative amounts indicate a unhealthy financial balance.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: analytics</p>
+<p>Analyses the amount you have left after taking into consideration your loans, and the amount that you can loan out. A positive value returned indicates a healthy financial balance (defined to be a surplus) whereas a negative amount returned indicates a unhealthy financial balance (defined to be a deficit).
+Format: analytics</p>
 </div>
 </div>
 <div class="sect2">
@@ -882,4 +884,4 @@ OR switch past</p>
 <p>Help : help</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 16:39:23 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 16:42:18 UTC</div></div></div></body></html>
