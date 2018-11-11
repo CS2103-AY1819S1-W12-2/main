@@ -68,7 +68,8 @@
 <li><a href="#deleting-a-transaction">8.2. Deleting a transaction</a></li>
 <li><a href="#saving-data">8.3. Saving data</a></li>
 <li><a href="#add-profile-image">8.4. Add Profile Image</a></li>
-<li><a href="#add-filter-command">8.5. Add Filter Command</a></li>
+<li><a href="#filter-command">8.5. Filter Command</a></li>
+<li><a href="#using-the-google-calendar-service">8.6. Using the Google Calendar service</a></li>
 </ul>
 </li>
 </ul>
@@ -156,7 +157,7 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 This will generate all resources required by the application and tests.</p>
 </li>
 <li>
-<p>Open <a href="https://github.com/CS2103-AY1819S1-W12-2/main/src/main/java/seedu/address/storage/XmlAdaptedPerson.java"><code>XmlAdaptedPerson.java</code></a> and <a href="https://github.com/CS2103-AY1819S1-W12-2/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
+<p>Open <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/storage/XmlAdaptedTransaction.java"><code>XmlAdaptedTransaction.java</code></a> and <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -169,7 +170,7 @@ This will generate all resources required by the application and tests.</p>
 </div>
 </li>
 <li>
-<p>Repeat this for the test folder as well (e.g. check <a href="https://github.com/CS2103-AY1819S1-W12-2/main/src/test/java/seedu/address/commons/util/XmlUtilTest.java"><code>XmlUtilTest.java</code></a> and <a href="https://github.com/CS2103-AY1819S1-W12-2/main/src/test/java/seedu/address/ui/HelpWindowTest.java"><code>HelpWindowTest.java</code></a> for code errors, and if so, resolve it the same way)</p>
+<p>Repeat this for the test folder as well (e.g. check <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/test/java/seedu/address/commons/util/XmlUtilTest.java"><code>XmlUtilTest.java</code></a> and <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/test/java/seedu/address/ui/HelpWindowTest.java"><code>HelpWindowTest.java</code></a> for code errors, and if so, resolve it the same way)</p>
 </li>
 </ol>
 </div>
@@ -232,10 +233,10 @@ This will generate all resources required by the application and tests.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Configure the <a href="#Docs-SiteWideDocSettings">site-wide documentation settings</a> in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/build.gradle"><code>build.gradle</code></a>, such as the <code>site-name</code>, to suit your own project.</p>
+<p>Configure the <a href="#Docs-SiteWideDocSettings">site-wide documentation settings</a> in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/build.gradle"><code>build.gradle</code></a>, such as the <code>site-name</code>, to suit your own project.</p>
 </li>
 <li>
-<p>Replace the URL in the attribute <code>repoURL</code> in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/docs/DeveloperGuide.adoc"><code>DeveloperGuide.adoc</code></a> and <a href="https://github.com/CS2103-AY1819S1-W12-2/main/docs/UserGuide.adoc"><code>UserGuide.adoc</code></a> with the URL of your fork.</p>
+<p>Replace the URL in the attribute <code>repoURL</code> in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/docs/DeveloperGuide.adoc"><code>DeveloperGuide.adoc</code></a> and <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/docs/UserGuide.adoc"><code>UserGuide.adoc</code></a> with the URL of your fork.</p>
 </li>
 </ol>
 </div>
@@ -364,12 +365,6 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">High</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">filter creditors and debtors</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">know who are the debtors and creditors</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">High</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">have a reminder to pay my creditor</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">ensure that my loans are not left outstanding</p></td>
 </tr>
@@ -446,6 +441,18 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">know the right amount to collect from the debtors</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">view a calendar with details of current transactions</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">have an overview of upcoming transactions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">filter transactions within a certain period</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">focus on transactions in a certain period</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">Low</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">calculate the interest rate of the loan</p></td>
@@ -494,13 +501,13 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The <code>.pptx</code> files used to create diagrams in this document can be found in the <a href="https://github.com/CS2103-AY1819S1-W12-2/main/docs/diagrams/">diagrams</a> folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose <code>Save as picture</code>.
+The <code>.pptx</code> files used to create diagrams in this document can be found in the <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/docs/diagrams/">diagrams</a> folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose <code>Save as picture</code>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has only one class called <a href="https://github.com/CS2103-AY1819S1-W12-2/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p><code>Main</code> has only one class called <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -622,13 +629,13 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <div class="title">Figure 5. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W12-2/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code>, <code>BrowserPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2103-AY1819S1-W12-2/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -657,7 +664,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/CS2103-AY1819S1-W12-2/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -694,7 +701,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <div class="title">Figure 8. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W12-2/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -739,7 +746,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Debt Tracker<
 <div class="title">Figure 9. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W12-2/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -1040,6 +1047,56 @@ certain conditions.</p>
 </div>
 </div>
 </div>
+<div class="sect4">
+<h5 id="use-case-filter-transactions-by-criteria"><a class="link" href="#use-case-filter-transactions-by-criteria">Use case: Filter Transactions by criteria</a></h5>
+<div class="paragraph">
+<p>MSS:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1.  User requests to view transactions that matches certain criteria</p>
+</li>
+<li>
+<p>2.  The System displays transactions that matches the criteria specified by the user<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Extensions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1a. User does not specify any criteria</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The system raises an error and indicates to the user the correct command format.<br></p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. User enters an invalid input for a criteria</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The system raises an error and indicates to the user the correct input format</p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1153,7 +1210,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="sect2">
 <h3 id="Docs-SiteWideDocSettings"><a class="link" href="#Docs-SiteWideDocSettings">5.4. Site-wide Documentation Settings</a></h3>
 <div class="paragraph">
-<p>The <a href="https://github.com/CS2103-AY1819S1-W12-2/main/build.gradle"><code>build.gradle</code></a> file specifies some project-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how all documentation files within this project are rendered.</p>
+<p>The <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/build.gradle"><code>build.gradle</code></a> file specifies some project-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how all documentation files within this project are rendered.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1269,11 +1326,11 @@ One of: <code>UserGuide</code>, <code>DeveloperGuide</code>, <code>LearningOutco
 <div class="sect2">
 <h3 id="site-template"><a class="link" href="#site-template">5.6. Site Template</a></h3>
 <div class="paragraph">
-<p>The files in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/docs/stylesheets"><code>docs/stylesheets</code></a> are the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS stylesheets</a> of the site.
+<p>The files in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/docs/stylesheets"><code>docs/stylesheets</code></a> are the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS stylesheets</a> of the site.
 You can modify them to change some properties of the site&#8217;s design.</p>
 </div>
 <div class="paragraph">
-<p>The files in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/docs/templates"><code>docs/templates</code></a> controls the rendering of <code>.adoc</code> files into HTML5.
+<p>The files in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/docs/templates"><code>docs/templates</code></a> controls the rendering of <code>.adoc</code> files into HTML5.
 These template files are written in a mixture of <a href="https://www.ruby-lang.org">Ruby</a> and <a href="http://slim-lang.com">Slim</a>.</p>
 </div>
 <div class="admonitionblock warning">
@@ -1284,7 +1341,7 @@ These template files are written in a mixture of <a href="https://www.ruby-lang.
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Modifying the template files in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/docs/templates"><code>docs/templates</code></a> requires some knowledge and experience with Ruby and Asciidoctor&#8217;s API.
+<p>Modifying the template files in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/docs/templates"><code>docs/templates</code></a> requires some knowledge and experience with Ruby and Asciidoctor&#8217;s API.
 You should only modify them if you need greater control over the site&#8217;s layout than what stylesheets can provide.
 The SE-EDU team does not provide support for modified template files.</p>
 </div>
@@ -1455,7 +1512,7 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Update the version number in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/src/main/java/seedu/address/MainApp.java"><code>MainApp.java</code></a>.</p>
+<p>Update the version number in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp.java</code></a>.</p>
 </li>
 <li>
 <p>Generate a JAR file <a href="UsingGradle.html#creating-the-jar-file">using Gradle</a>.</p>
@@ -1589,7 +1646,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="add-filter-command"><a class="link" href="#add-filter-command">8.5. Add Filter Command</a></h3>
+<h3 id="filter-command"><a class="link" href="#filter-command">8.5. Filter Command</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1597,8 +1654,91 @@ Expected: Similar to previous.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Test case: <code>filter n/john e/hotmail.com</code><br>
-Expected: Lists all persons named john with a hotmail.com email</p>
+<p>Test case: <code>filter n/alex e/example.com</code><br>
+Expected: Lists all transactions with name 'alex' with an 'example.com' email</p>
+</li>
+<li>
+<p>Test case: <code>filter tdmin/10/11/2018 tdmax/14/12/2018</code><br>
+Expected: Lists all transactions with deadline between 10/11/2018 and 14/12/2018</p>
+</li>
+<li>
+<p>Test case: <code>filter n/alex e/example.com and/ or/</code>
+Expected: Command fails. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect filter commands to try: <code>filter</code>, <code>filter n/;;</code>, <code>filter or/</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="using-the-google-calendar-service"><a class="link" href="#using-the-google-calendar-service">8.6. Using the Google Calendar service</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Logging in with a Google account</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Enter <code>calendar login</code> into the command box.</p>
+</li>
+<li>
+<p>Browser will launch with an authentication prompt.</p>
+</li>
+<li>
+<p>Enter your Google account details for authentication. There are three possible options for this:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Use an existing Google account</p>
+</li>
+<li>
+<p>Create a new Google account for testing</p>
+</li>
+<li>
+<p>Login with the provided test account (not recommended):</p>
+<div class="literalblock">
+<div class="content">
+<pre>Username: debttracker2103@gmail.com
+Password: 2103testaccount</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use of the provided test account is not recommended as it may produce unexpected results when viewing/syncing the calendar data due to the possibility of concurrent users. Only use if you do not have access to and are unable to create a new Google account.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Viewing the Calendar</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Enter <code>calendar show</code> in the command box to view the Google calendar in-app.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Syncing the Calendar</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Calendar data is synced automatically when entering a command that modifies the debt tracker data.</p>
+</li>
+<li>
+<p>To perform a manual sync in cases where the calendar data is not in sync with the debt tracker app, enter <code>calendar sync</code> into the command box.</p>
 </li>
 </ol>
 </div>
@@ -1607,4 +1747,4 @@ Expected: Lists all persons named john with a hotmail.com email</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 15:49:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 09:29:35 UTC</div></div></div></body></html>

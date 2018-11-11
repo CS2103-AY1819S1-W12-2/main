@@ -16,7 +16,7 @@
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
 <li><a href="#adding-a-transaction-code-add-code">3.2. Adding a transaction : <code>add</code></a></li>
 <li><a href="#uploading-deleting-a-photo-under-a-person-code-uploadp-code-to-be-implemented">3.3. Uploading/Deleting a photo under a person : <code>uploadp</code> (TO BE IMPLEMENTED)</a></li>
-<li><a href="#view-calendar-with-debt-deadlines-code-calendar-code">3.4. View calendar with debt deadlines : <code>calendar</code></a></li>
+<li><a href="#view-calendar-with-current-transaction-deadlines-code-calendar-code">3.4. View calendar with current transaction deadlines : <code>calendar</code></a></li>
 <li><a href="#converting-multiple-currencies-code-convert-code">3.5. Converting multiple currencies: <code>convert</code></a></li>
 <li><a href="#calculating-interest-on-transactions-code-interest-code">3.6. Calculating interest on transactions: <code>interest</code></a></li>
 <li><a href="#updating-a-transaction-code-edit-code">3.7. Updating a transaction : <code>edit</code></a></li>
@@ -258,9 +258,9 @@ To delete a photo: uploadp [INDEX] up/delete</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="view-calendar-with-debt-deadlines-code-calendar-code"><a class="link" href="#view-calendar-with-debt-deadlines-code-calendar-code">3.4. View calendar with debt deadlines : <code>calendar</code></a></h3>
+<h3 id="view-calendar-with-current-transaction-deadlines-code-calendar-code"><a class="link" href="#view-calendar-with-current-transaction-deadlines-code-calendar-code">3.4. View calendar with current transaction deadlines : <code>calendar</code></a></h3>
 <div class="paragraph">
-<p>Displays a Google calendar showing the user&#8217;s transactions and their deadlines.<br></p>
+<p>Displays a Google calendar showing the user&#8217;s current transactions and their deadlines.<br></p>
 </div>
 <div class="paragraph">
 <p>Conditions:<br></p>
@@ -268,13 +268,36 @@ To delete a photo: uploadp [INDEX] up/delete</p>
 <div class="ulist">
 <ul>
 <li>
-<p>This command can only be used with one of the following keywords: 1) show  2) login 3)logout.<br></p>
+<p>This command can only be used with one of the following keywords: 1) show  2) login 3) logout 4) sync<br></p>
 </li>
 <li>
 <p>The keywords are case-sensitive.</p>
 </li>
 <li>
 <p>This feature requires linking the deadlines to your Google account. Hence a test google account will be provided.<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Test Account:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The Google account provided below can be used for testing the calendar feature:</p>
+<div class="literalblock">
+<div class="content">
+<pre>Username: debttracker2103@gmail.com
+Password: 2103testaccount</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Note:  Use of a personal or newly created Google account is highly recommended. Usage of the provided test account may produce unexpected results, as multiple users may access the test account at the same time.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -293,7 +316,7 @@ To delete a photo: uploadp [INDEX] up/delete</p>
 <p>To logout of your Google account: calendar logout<br></p>
 </li>
 <li>
-<p>To manually synchronise the user&#8217;s transactions with the calendar: calendar sync</p>
+<p>To manually synchronise the user&#8217;s current transactions with the calendar: calendar sync</p>
 </li>
 </ul>
 </div>
@@ -441,15 +464,80 @@ and the tie is broken using the phone number or email address.</p>
 <p>Filters transactions matching specified criteria.<br></p>
 </div>
 <div class="paragraph">
+<p>Note: This command does not work with the <code>undo</code> and <code>redo</code> commands, since it does not modify the debt tracker&#8217;s data.</p>
+</div>
+<div class="paragraph">
 <p>Conditions:<br></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>It is optional to provide the criteria.<br></p>
+<p>At least one criteria has to be specified.<br></p>
 </li>
 <li>
-<p>The respective parameters should follow the format specified in the add command.<br></p>
+<p>The same parameter cannot be specified twice (e.g. <code>filter n/alex n/bernice</code> will be rejected)<br></p>
+</li>
+<li>
+<p>The following parameters correspond to the same attributes used in the add command:<br></p>
+<div class="literalblock">
+<div class="content">
+<pre>[tt/TYPE] [ta/AMOUNT] [td/DEADLINE] [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The values provided for these parameters are case-insensitive<br>
+(i.e. <code>filter n/aLeX</code> produces the same results as <code>filter n/alex</code>)</p>
+</li>
+<li>
+<p>These parameters do not require an exact match. A match will be found as long as the respective attribute contains the sequence of characters provided. (e.g. <code>filter e/example.com</code> will match a transaction with the email <code>alexyeoh@example.com</code>)</p>
+</li>
+<li>
+<p>Multiple keywords can be specified for each attribute, separated by a semi-colon (e.g. <code>filter a/Jurong;Tampines;Geylang</code>).<br>
+Transactions matching at least one of the keywords will be returned.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The following parameters must match a specific format :</p>
+<div class="literalblock">
+<div class="content">
+<pre>[tamin/MIN_AMOUNT] [tamax/MAX_AMOUNT] [tdmin/EARLIEST_DATE] [tdmax/LATEST_DATE]</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>MIN_AMOUNT</code> and <code>MAX_AMOUNT</code> must be a real number rounded to two decimal places. Unlike <code>AMOUNT</code>, the currency code should be omitted (e.g. <code>filter tamin/10.00 tamax/50.00</code>).<br>
+The transaction amounts will be compared only by their numerical value (e.g. <code>filter tamin/10.00</code> will match both <code>USD 11.00</code> and <code>IDR 11.00</code>).<br>
+Use the convert command before filtering if a comparison between different currencies is desired.</p>
+</li>
+<li>
+<p><code>EARLIEST_DATE</code> and <code>LATEST_DATE</code> must be a valid date according to the Gregorian Calendar, following the DD/MM/YYYY format</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>If multiple parameters are specified, by default, only transactions satisfying the criteria for ALL parameters will be returned.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To return transactions satisfying ANY of the parameter criteria, use the <code>/or</code> prefix.</p>
+</li>
+<li>
+<p>The <code>/and</code> prefix can also be specified for the default behavior of returning transactions satisfying ALL parameter criteria.</p>
+</li>
+<li>
+<p>The <code>or/</code> and <code>/and</code> prefixes cannot be specified at the same time.</p>
+</li>
+<li>
+<p>At least one criteria has to be specified other than the parameters <code>or/</code> and <code>and/</code>.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -460,8 +548,33 @@ and the tie is broken using the phone number or email address.</p>
 <p>filter [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [tt/TYPE] [ta/AMOUNT] [td/DEADLINE] [tamin/MIN_AMOUNT] [tamax/MAX_AMOUNT] [tdmin/EARLIEST_DATE] [tdmax/LATEST_DATE]</p>
 </div>
 <div class="paragraph">
-<p>e.g. filter t/debtor OR<br>
-     filter t/debtor tamin/SGD 50.00 tamax/SGD 100.00 tdmin/05/06/2018 tdmax/31/12/2018</p>
+<p>Examples:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To filter all debts: <code>filter tt/debt</code></p>
+</li>
+<li>
+<p>To filter all loans: <code>filter tt/loan</code></p>
+</li>
+<li>
+<p>To filter all transactions with addresses containing 'tampines' or 'geylang':
+<code>filter a/tampines;geylang</code></p>
+</li>
+<li>
+<p>To filter all transactions with amount between 10.00 and 50.00:<br>
+<code>filter tamin/10.00 and tamax/50.00</code></p>
+</li>
+<li>
+<p>To filter all transactions with deadlines between 10/11/2018 and 14/12/2018 (inclusive):<br>
+<code>filter tdmin/10/11/2018 tdmax/14/12/2018</code></p>
+</li>
+<li>
+<p>To filter transactions that have addresses containing 'tampines' or 'geylang' OR are tagged with the 'family' tag:<br>
+<code>filter a/tampines;geylang t/family or/</code></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -685,10 +798,10 @@ OR sort amount<br>
 OR sort deadline<br></p>
 </div>
 <div class="paragraph">
-<p>Filter : filter[t/TAG]…<br></p>
+<p>Filter : filter[tt/TRANSACTION_TYPE]…<br></p>
 </div>
 <div class="paragraph">
-<p>e.g. filter t/debtor<br>
+<p>e.g. filter tt/debt<br>
 OR filter n/Alex e/example.com tt/debt tamin/SGD 10.00 tdmax/31/12/2018</p>
 </div>
 <div class="paragraph">
@@ -755,4 +868,4 @@ OR switch past</p>
 <p>Help : help</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 15:49:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 09:29:35 UTC</div></div></div></body></html>
