@@ -23,7 +23,8 @@ Furthermore, it helps them keep track of how their current financial status came
 transactions they made and keep track of in the paid transactions list.
 ** Highlights: This enhancement required an deep understanding of AddressBook-Level4's original code in order to be
 implemented, as in order to add this enhancement, I had to refactor several functions and classes and use the data
-structures they implemented.
+structures they implemented. The test code was originally from the provided DeleteCommand Tests, but has been refactored
+to be for PaidCommand.
 ** Code contributed: +
 *** [https://github.com/CS2103-AY1819S1-W12-2/main/pull/96/files[Functional Code Block #1 - Implementing
 PaidCommand]] +
@@ -41,6 +42,8 @@ intended transaction.
 *** [https://github.com/CS2103-AY1819S1-W12-2/main/pull/88/files[Functional Code - Implement the logic for wildcard search]]
 
 * *Other contributions*:
+
+** [https://nus-cs2103-ay1819s1.github.io/cs2103-dashboard/#=undefined&search=bellaaarh[Overall Code Contribution]]
 
 ** Enhancements to existing features:
 *** Updated the GUI colour scheme [https://github.com/CS2103-AY1819S1-W12-2/main/pull/35/files[Pull Request #35]]
@@ -180,4 +183,4 @@ Extensions:
 
 ''''
 **Developer Guide-Related Pull Requests:**
-
+[[Pull Request #121]] +
