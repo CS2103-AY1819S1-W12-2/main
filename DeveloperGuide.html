@@ -1809,8 +1809,41 @@ Expected: Similar to previous.</p>
 <li>
 <p>Advantage: It would prevent user from uploading large files as the application may be unstable.</p>
 </li>
+<li>
+<p>Prerequisities: You have a png image that is less than 10MB at Users folder.<br>
+TestCase: <code>uploadphoto 3 up/Users/xiaoyeong.png</code><br>
+Expected: Your Profile Picture will be displayed.</p>
+</li>
 </ol>
 </div>
+</li>
+<li>
+<p>This is the <code>sequence diagram</code> for the <code>updatephoto</code> command<br></p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/LogicComponentDiagram2.png" alt="LogicComponentDiagram2" width="800">
+</div>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The user executes the <code>updatephoto INDEX up/FILEPATH</code> command, with parameters <code>INDEX</code> and <code>FILEPATH</code></p>
+</li>
+<li>
+<p>The <code>FinancialDatabaseParser</code> class parses the command and create a new <code>UploadPhotoCommand</code> class.</p>
+</li>
+<li>
+<p>New <code>Photo</code> object is created, which contain the image referenced by <code>FILEPATH</code>.
+&#8230;&#8203;If the FILEPATH&#8217;s is invalid or equals to  'delete', it will display the default picture.</p>
+</li>
+<li>
+<p>The new <code>Photo</code> is attached to the <code>Transaction</code> at <code>INDEX</code></p>
+</li>
+<li>
+<p>The new photo is displayed and updated</p>
 </li>
 </ol>
 </div>
@@ -1941,4 +1974,4 @@ Password: 2103testaccount</pre>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 15:34:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 15:37:11 UTC</div></div></div></body></html>
