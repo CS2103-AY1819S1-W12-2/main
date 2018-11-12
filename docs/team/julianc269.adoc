@@ -5,8 +5,6 @@
 
 == PROJECT: DebtTracker
 
----
-
 == Overview
 
 Debt Tracker is a CLI-based desktop application that helps users manage their finances. It keeps track of the financial
