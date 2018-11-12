@@ -1,10 +1,11 @@
 = Cheong Kit Wai, Julian - Project Portfolio
-
 :site-section: AboutUs
 :imagesDir: ../images
 :stylesDir: ../stylesheets
 
 == PROJECT: DebtTracker
+
+---
 
 == Overview
 
