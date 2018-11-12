@@ -1,0 +1,429 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Cheong Kit Wai, Julian - Project Portfolio</title><link rel="stylesheet" href="./gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">DebtTracker</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S1-W12-2/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Cheong Kit Wai, Julian - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-debttracker"><a class="link" href="#project-debttracker">PROJECT: DebtTracker</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Debt Tracker is a CLI-based desktop application that helps users manage their finances. It keeps track of the financial
+transactions the user undertakes. The primary target audience of this application is Small and Medium Entreprises (SMEs) in Singapore since
+they typically face budget constraints and have to maintain a good credit score. However, this application can also be used by individuals
+who may want to maintain a database of their personal transactions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: added the ability to <strong>view transactions on Google Calendar</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows the user to view their transactions on Google Calendar</p>
+</li>
+<li>
+<p>Justification: This feature helps the user keep track of their transaction deadlines by displaying them in a calendar in an organized manner. Users can view this calendar on their smartphones or on any device with a web browser.</p>
+</li>
+<li>
+<p>Highlights: This implementation uses the <a href="https://developers.google.com/calendar/">Google Calendar API</a> provided by Google. Working with the API requires reading through an extensive amount of documentation. Challenges arise when the documentation is insufficient, which I have encountered when implementing batch requests to the API.</p>
+</li>
+<li>
+<p>Code contributed: [<a href="https://nus-cs2103-ay1819s1.github.io/cs2103-dashboard/#=undefined&amp;search=julianc269">Functional Code</a>] [<a href="https://github.com/CS2103-AY1819S1-W12-2/main/blob/master/src/test/java/seedu/address/logic/parser/CalendarCommandParserTest.java">Test code</a>]</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: added the ability to <strong>filter transactions by various criteria</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows the user to filter transactions by various criteria such as the person/company name, the transaction amount and transaction deadline etc. A large number of filter options are provided to allow for a highly customizable search.</p>
+</li>
+<li>
+<p>Justification: As the user may have a large number of transactions, finding the relevant transaction(s) manually may be extremely time-consuming. The filter feature allows the user to easily view and focus on the transactions that are relevant to their current purpose.</p>
+</li>
+<li>
+<p>Code contributed: [<a href="https://nus-cs2103-ay1819s1.github.io/cs2103-dashboard/#=undefined&amp;search=julianc269">Functional Code</a>] [<a href="https://github.com/CS2103-AY1819S1-W12-2/main/blob/master/src/test/java/seedu/address/logic/commands/FilterCommandTest.java">Test code #1</a>] [<a href="https://github.com/CS2103-AY1819S1-W12-2/main/blob/master/src/test/java/seedu/address/logic/parser/FilterCommandParserTest.java">Test code #2</a>]</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Helped morph the project to use a Transaction model [<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/33/files">Pull Request #33</a>]</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Testing:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Helped with refactoring of the test code after morphing the product<br>
+[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/62/files">Pull Request #62</a>] [<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/64/files">Pull Request #64</a>] <br></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/34/">Pull Request #34</a>]<br></p>
+</li>
+<li>
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/118/">Pull Request #118</a>]<br></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="filtering-transactions-by-various-criteria-code-filter-code"><a class="link" href="#filtering-transactions-by-various-criteria-code-filter-code">Filtering transactions by various criteria: <code>filter</code></a></h3>
+<div class="paragraph">
+<p>Filters transactions matching specified criteria.<br></p>
+</div>
+<div class="paragraph">
+<p>Note: This command does not work with the <code>undo</code> and <code>redo</code> commands, since it does not modify the debt tracker&#8217;s data.</p>
+</div>
+<div class="paragraph">
+<p>Conditions:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At least one criteria has to be specified.<br></p>
+</li>
+<li>
+<p>The same parameter cannot be specified twice (e.g. <code>filter n/alex n/bernice</code> will be rejected)<br></p>
+</li>
+<li>
+<p>The following parameters correspond to the same attributes used in the add command:<br></p>
+<div class="literalblock">
+<div class="content">
+<pre>[tt/TYPE] [ta/AMOUNT] [td/DEADLINE] [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The values provided for these parameters are case-insensitive<br>
+(i.e. <code>filter n/aLeX</code> produces the same results as <code>filter n/alex</code>)</p>
+</li>
+<li>
+<p>These parameters do not require an exact match. A match will be found as long as the respective attribute contains the sequence of characters provided. (e.g. <code>filter e/example.com</code> will match a transaction with the email <code>alexyeoh@example.com</code>)</p>
+</li>
+<li>
+<p>Multiple keywords can be specified for each attribute, separated by a semi-colon (e.g. <code>filter a/Jurong;Tampines;Geylang</code>).<br>
+Transactions matching at least one of the keywords will be returned.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The following parameters must match a specific format :</p>
+<div class="literalblock">
+<div class="content">
+<pre>[tamin/MIN_AMOUNT] [tamax/MAX_AMOUNT] [tdmin/EARLIEST_DATE] [tdmax/LATEST_DATE]</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>MIN_AMOUNT</code> and <code>MAX_AMOUNT</code> must be a real number rounded to two decimal places. Unlike <code>AMOUNT</code>, the currency code should be omitted (e.g. <code>filter tamin/10.00 tamax/50.00</code>).<br>
+The transaction amounts will be compared only by their numerical value (e.g. <code>filter tamin/10.00</code> will match both <code>USD 11.00</code> and <code>IDR 11.00</code>).<br>
+Use the convert command before filtering if a comparison between different currencies is desired.</p>
+</li>
+<li>
+<p><code>EARLIEST_DATE</code> and <code>LATEST_DATE</code> must be a valid date according to the Gregorian Calendar, following the DD/MM/YYYY format</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>If multiple parameters are specified, by default, only transactions satisfying the criteria for ALL parameters will be returned.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To return transactions satisfying ANY of the parameter criteria, use the <code>/or</code> prefix.</p>
+</li>
+<li>
+<p>The <code>/and</code> prefix can also be specified for the default behavior of returning transactions satisfying ALL parameter criteria.</p>
+</li>
+<li>
+<p>The <code>or/</code> and <code>/and</code> prefixes cannot be specified at the same time.</p>
+</li>
+<li>
+<p>At least one criteria has to be specified other than the parameters <code>or/</code> and <code>and/</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Format: <br></p>
+</div>
+<div class="paragraph">
+<p>filter [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [tt/TYPE] [ta/AMOUNT] [td/DEADLINE] [tamin/MIN_AMOUNT] [tamax/MAX_AMOUNT] [tdmin/EARLIEST_DATE] [tdmax/LATEST_DATE]</p>
+</div>
+<div class="paragraph">
+<p>Examples:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To filter all debts: <code>filter tt/debt</code></p>
+</li>
+<li>
+<p>To filter all loans: <code>filter tt/loan</code></p>
+</li>
+<li>
+<p>To filter all transactions with addresses containing 'tampines' or 'geylang':
+<code>filter a/tampines;geylang</code></p>
+</li>
+<li>
+<p>To filter all transactions with amount between 10.00 and 50.00:<br>
+<code>filter tamin/10.00 and tamax/50.00</code></p>
+</li>
+<li>
+<p>To filter all transactions with deadlines between 10/11/2018 and 14/12/2018 (inclusive):<br>
+<code>filter tdmin/10/11/2018 tdmax/14/12/2018</code></p>
+</li>
+<li>
+<p>To filter transactions that have addresses containing 'tampines' or 'geylang' OR are tagged with the 'family' tag:<br>
+<code>filter a/tampines;geylang t/family or/</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Pull-Requests:</strong></p>
+</div>
+<div class="paragraph">
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/82/files">Pull Request#82</a>]<br></p>
+</div>
+<div class="paragraph">
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/134/files">Pull Request #134</a>]<br></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="use-case-filter-transactions-by-criteria"><a class="link" href="#use-case-filter-transactions-by-criteria">Use case: Filter Transactions by criteria</a></h5>
+<div class="paragraph">
+<p>MSS:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1.  User requests to view transactions that matches certain criteria</p>
+</li>
+<li>
+<p>2.  The System displays transactions that matches the criteria specified by the user<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Extensions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1a. User does not specify any criteria</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The system raises an error and indicates to the user the correct command format.<br></p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. User enters an invalid input for a criteria</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The system raises an error and indicates to the user the correct input format</p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filter-command"><a class="link" href="#filter-command">Filter Command</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Prerequisites: Command input must adhere strictly to specified format</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>filter n/alex e/example.com</code><br>
+Expected: Lists all transactions with name 'alex' with an 'example.com' email</p>
+</li>
+<li>
+<p>Test case: <code>filter tdmin/10/11/2018 tdmax/14/12/2018</code><br>
+Expected: Lists all transactions with deadline between 10/11/2018 and 14/12/2018</p>
+</li>
+<li>
+<p>Test case: <code>filter n/alex e/example.com and/ or/</code>
+Expected: Command fails. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect filter commands to try: <code>filter</code>, <code>filter n/;;</code>, <code>filter or/</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="using-the-google-calendar-service"><a class="link" href="#using-the-google-calendar-service">Using the Google Calendar service</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Logging in with a Google account</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Enter <code>calendar login</code> into the command box.</p>
+</li>
+<li>
+<p>Browser will launch with an authentication prompt.</p>
+</li>
+<li>
+<p>Enter your Google account details for authentication. There are three possible options for this:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Use an existing Google account</p>
+</li>
+<li>
+<p>Create a new Google account for testing</p>
+</li>
+<li>
+<p>Login with the provided test account (not recommended):</p>
+<div class="literalblock">
+<div class="content">
+<pre>Username: debttracker2103@gmail.com
+Password: 2103testaccount</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use of the provided test account is not recommended as it may produce unexpected results when viewing/syncing the calendar data due to the possibility of concurrent users. Only use if you do not have access to and are unable to create a new Google account.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Viewing the Calendar</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Enter <code>calendar show</code> in the command box to view the Google calendar in-app.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Syncing the Calendar</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Calendar data is synced automatically when entering a command that modifies the debt tracker data.</p>
+</li>
+<li>
+<p>To perform a manual sync in cases where the calendar data is not in sync with the debt tracker app, enter <code>calendar sync</code> into the command box.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Pull-Requests:</strong></p>
+</div>
+<div class="paragraph">
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/18/files">Pull Request #18</a>]<br></p>
+</div>
+<div class="paragraph">
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/134/files">Pull Request #134</a>]<br></p>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 07:42:39 UTC</div></div></div></body></html>
