@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>FinancialDatabase Level 4 - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>FinancialDatabase - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">DebtTracker</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S1-W12-2/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>FinancialDatabase Level 4 - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">DebtTracker</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S1-W12-2/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>FinancialDatabase - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>W12-2</code>      Since: <code>September 2018</code>      Licence: <code>MIT</code></p>
@@ -17,67 +17,71 @@
 <li><a href="#configurations-to-do-before-writing-code">1.4. Configurations to do before writing code</a></li>
 </ul>
 </li>
-<li><a href="#user-stories">2. User Stories</a></li>
-<li><a href="#use-cases">3. Use Cases</a>
+<li><a href="#design">2. Design</a>
 <ul class="sectlevel2">
-<li><a href="#analyses-financial-income">3.1. Analyses Financial Income</a></li>
-<li><a href="#wildcard-search">3.2. Wildcard Search</a></li>
-<li><a href="#paid">3.3. Paid</a></li>
+<li><a href="#Design-Architecture">2.1. Architecture</a></li>
+<li><a href="#Design-Ui">2.2. UI component</a></li>
+<li><a href="#Design-Logic">2.3. Logic component</a></li>
+<li><a href="#Design-Model">2.4. Model component</a></li>
+<li><a href="#Design-Storage">2.5. Storage component</a></li>
+<li><a href="#Design-Commons">2.6. Common classes</a></li>
 </ul>
 </li>
-<li><a href="#design">4. Design</a>
+<li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#Design-Architecture">4.1. Architecture</a></li>
-<li><a href="#Design-Ui">4.2. UI component</a></li>
-<li><a href="#Design-Logic">4.3. Logic component</a></li>
-<li><a href="#Design-Model">4.4. Model component</a></li>
-<li><a href="#Design-Storage">4.5. Storage component</a></li>
-<li><a href="#Design-Commons">4.6. Common classes</a></li>
+<li><a href="#undo-redo-feature">3.1. Undo/Redo feature</a></li>
+<li><a href="#logging">3.2. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.3. Configuration</a></li>
 </ul>
 </li>
-<li><a href="#implementation">5. Implementation</a>
+<li><a href="#documentation">4. Documentation</a>
 <ul class="sectlevel2">
-<li><a href="#undo-redo-feature">5.1. Undo/Redo feature</a></li>
-<li><a href="#logging">5.2. Logging</a></li>
-<li><a href="#Implementation-Configuration">5.3. Configuration</a></li>
+<li><a href="#editing-documentation">4.1. Editing Documentation</a></li>
+<li><a href="#publishing-documentation">4.2. Publishing Documentation</a></li>
+<li><a href="#converting-documentation-to-pdf-format">4.3. Converting Documentation to PDF format</a></li>
+<li><a href="#Docs-SiteWideDocSettings">4.4. Site-wide Documentation Settings</a></li>
+<li><a href="#Docs-PerFileDocSettings">4.5. Per-file Documentation Settings</a></li>
+<li><a href="#site-template">4.6. Site Template</a></li>
 </ul>
 </li>
-<li><a href="#documentation">6. Documentation</a>
+<li><a href="#Testing">5. Testing</a>
 <ul class="sectlevel2">
-<li><a href="#editing-documentation">6.1. Editing Documentation</a></li>
-<li><a href="#publishing-documentation">6.2. Publishing Documentation</a></li>
-<li><a href="#converting-documentation-to-pdf-format">6.3. Converting Documentation to PDF format</a></li>
-<li><a href="#Docs-SiteWideDocSettings">6.4. Site-wide Documentation Settings</a></li>
-<li><a href="#Docs-PerFileDocSettings">6.5. Per-file Documentation Settings</a></li>
-<li><a href="#site-template">6.6. Site Template</a></li>
+<li><a href="#running-tests">5.1. Running Tests</a></li>
+<li><a href="#types-of-tests">5.2. Types of tests</a></li>
+<li><a href="#troubleshooting-testing">5.3. Troubleshooting Testing</a></li>
 </ul>
 </li>
-<li><a href="#Testing">7. Testing</a>
+<li><a href="#dev-ops">6. Dev Ops</a>
 <ul class="sectlevel2">
-<li><a href="#running-tests">7.1. Running Tests</a></li>
-<li><a href="#types-of-tests">7.2. Types of tests</a></li>
-<li><a href="#troubleshooting-testing">7.3. Troubleshooting Testing</a></li>
+<li><a href="#build-automation">6.1. Build Automation</a></li>
+<li><a href="#continuous-integration">6.2. Continuous Integration</a></li>
+<li><a href="#coverage-reporting">6.3. Coverage Reporting</a></li>
+<li><a href="#documentation-previews">6.4. Documentation Previews</a></li>
+<li><a href="#making-a-release">6.5. Making a Release</a></li>
+<li><a href="#managing-dependencies">6.6. Managing Dependencies</a></li>
 </ul>
 </li>
-<li><a href="#dev-ops">8. Dev Ops</a>
+<li><a href="#instructions-for-manual-testing">Appendix A: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
-<li><a href="#build-automation">8.1. Build Automation</a></li>
-<li><a href="#continuous-integration">8.2. Continuous Integration</a></li>
-<li><a href="#coverage-reporting">8.3. Coverage Reporting</a></li>
-<li><a href="#documentation-previews">8.4. Documentation Previews</a></li>
-<li><a href="#making-a-release">8.5. Making a Release</a></li>
-<li><a href="#managing-dependencies">8.6. Managing Dependencies</a></li>
+<li><a href="#launch-and-shutdown">A.1. Launch and Shutdown</a></li>
+<li><a href="#deleting-a-transaction">A.2. Deleting a transaction</a></li>
+<li><a href="#adding-a-profile-image">A.3. Adding a Profile Image</a></li>
+<li><a href="#marking-transactions-as-paid">A.4. Marking transactions as paid</a></li>
+<li><a href="#filtering-transactions">A.5. Filtering transactions</a></li>
+<li><a href="#using-the-google-calendar-service">A.6. Using the Google Calendar service</a></li>
+<li><a href="#converting-currencies">A.7. Converting currencies</a></li>
+<li><a href="#calculating-interest">A.8. Calculating interest</a></li>
+<li><a href="#sorting-transactions">A.9. Sorting transactions</a></li>
 </ul>
 </li>
-<li><a href="#instructions-for-manual-testing">9. Instructions for Manual Testing</a>
+<li><a href="#user-stories">Appendix B: User Stories</a></li>
+<li><a href="#use-cases">Appendix C: Use Cases</a>
 <ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">9.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-transaction">9.2. Deleting a transaction</a></li>
-<li><a href="#saving-data">9.3. Saving data</a></li>
-<li><a href="#add-profile-image">9.4. Add Profile Image</a></li>
-<li><a href="#paid-command">9.5. Paid Command</a></li>
-<li><a href="#filter-command">9.6. Filter Command</a></li>
-<li><a href="#using-the-google-calendar-service">9.7. Using the Google Calendar service</a></li>
+<li><a href="#use-case-analyse-financial-income">C.1. Use case: Analyse Financial Income</a></li>
+<li><a href="#use-case-wildcard-search">C.2. Use case: Wildcard Search</a></li>
+<li><a href="#use-case-paid">C.3. Use case: Paid</a></li>
+<li><a href="#use-case-convert-transaction-amounts">C.4. Use case: Convert transaction amounts</a></li>
+<li><a href="#use-case-calculate-interest-on-transaction-amounts">C.5. Use case: Calculate interest on transaction amounts</a></li>
 </ul>
 </li>
 </ul>
@@ -293,7 +297,7 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Get some sense of the overall design by reading <a href="#Design-Architecture">Section 4.1, &#8220;Architecture&#8221;</a>.</p>
+<p>Get some sense of the overall design by reading <a href="#Design-Architecture">Section 2.1, &#8220;Architecture&#8221;</a>.</p>
 </li>
 <li>
 <p>Take a look at <a href="#GetStartedProgramming">[GetStartedProgramming]</a>.</p>
@@ -305,7 +309,1307 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 </div>
 </div>
 <div class="sect1">
-<h2 id="user-stories"><a class="link" href="#user-stories">2. User Stories</a></h2>
+<h2 id="design"><a class="link" href="#design">2. Design</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">2.1. Architecture</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/Architecture.png" alt="Architecture" width="600">
+</div>
+<div class="title">Figure 1. Architecture Diagram</div>
+</div>
+<div class="paragraph">
+<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The <code>.pptx</code> files used to create diagrams in this document can be found in the <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/docs/diagrams/">diagrams</a> folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose <code>Save as picture</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>Main</code> has only one class called <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At app launch: Initializes the components in the correct sequence, and connects them up with each other.</p>
+</li>
+<li>
+<p>At shut down: Shuts down the components and invokes cleanup method where necessary.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="#Design-Commons"><strong><code>Commons</code></strong></a> represents a collection of classes used by multiple other components. Two of those classes play important roles at the architecture level.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>EventsCenter</code> : This class (written using <a href="https://github.com/google/guava/wiki/EventBusExplained">Google&#8217;s Event Bus library</a>) is used by components to communicate with other components using events (i.e. a form of <em>Event Driven</em> design)</p>
+</li>
+<li>
+<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The rest of the App consists of four components.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Design-Ui"><strong><code>UI</code></strong></a>: The UI of the App.</p>
+</li>
+<li>
+<p><a href="#Design-Logic"><strong><code>Logic</code></strong></a>: The command executor.</p>
+</li>
+<li>
+<p><a href="#Design-Model"><strong><code>Model</code></strong></a>: Holds the data of the App in-memory.</p>
+</li>
+<li>
+<p><a href="#Design-Storage"><strong><code>Storage</code></strong></a>: Reads data from, and writes data to, the hard disk.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each of the four components</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Defines its <em>API</em> in an <code>interface</code> with the same name as the Component.</p>
+</li>
+<li>
+<p>Exposes its functionality using a <code>{Component Name}Manager</code> class.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
+</div>
+<div class="title">Figure 2. Class Diagram of the Logic Component</div>
+</div>
+<h4 id="events-driven-nature-of-the-design" class="discrete">Events-Driven nature of the design</h4>
+<div class="paragraph">
+<p>The <em>Sequence Diagram</em> below shows how the components interact for the scenario where the user issues the command <code>delete 1</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SDforDeletePerson.png" alt="SDforDeletePerson" width="800">
+</div>
+<div class="title">Figure 3. Component interactions for <code>delete 1</code> command (part 1)</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Note how the <code>Model</code> simply raises a <code>FinancialDatabaseChangedEvent</code> when the Address Book data are changed, instead of asking the <code>Storage</code> to save the updates to the hard disk.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The diagram below shows how the <code>EventsCenter</code> reacts to that event, which eventually results in the updates being saved to the hard disk and the status bar of the UI being updated to reflect the 'Last Updated' time.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SDforDeletePersonEventHandling.png" alt="SDforDeletePersonEventHandling" width="800">
+</div>
+<div class="title">Figure 4. Component interactions for <code>delete 1</code> command (part 2)</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Note how the event is propagated through the <code>EventsCenter</code> to the <code>Storage</code> and <code>UI</code> without <code>Model</code> having to be coupled to either of them. This is an example of how this Event Driven approach helps us reduce direct coupling between components.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The sections below give more details of each component.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">2.2. UI component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/UiClassDiagram.png" alt="UiClassDiagram" width="800">
+</div>
+<div class="title">Figure 5. Structure of the UI Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code>, <code>BrowserPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+</div>
+<div class="paragraph">
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>UI</code> component,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Executes user commands using the <code>Logic</code> component.</p>
+</li>
+<li>
+<p>Binds itself to some data in the <code>Model</code> so that the UI can auto-update when data in the <code>Model</code> change.</p>
+</li>
+<li>
+<p>Responds to events raised from various parts of the App and updates the UI accordingly.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
+<div id="fig-LogicClassDiagram" class="imageblock">
+<div class="content">
+<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
+</div>
+<div class="title">Figure 6. Structure of the Logic Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> :
+<a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>Logic</code> uses the <code>FinancialDatabaseParser</code> class to parse the user command.</p>
+</li>
+<li>
+<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
+</li>
+<li>
+<p>The command execution can affect the <code>Model</code> (e.g. adding a transaction) and/or raise events.</p>
+</li>
+<li>
+<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeletePersonSdForLogic.png" alt="DeletePersonSdForLogic" width="800">
+</div>
+<div class="title">Figure 7. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModelClassDiagram.png" alt="ModelClassDiagram" width="800">
+</div>
+<div class="title">Figure 8. Structure of the Model Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Model</code>,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
+</li>
+<li>
+<p>stores the Debt Tracker data.</p>
+</li>
+<li>
+<p>exposes an unmodifiable <code>ObservableList&lt;Person&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+</li>
+<li>
+<p>does not depend on any of the other three components.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+As a more OOP model, we can store a <code>Tag</code> list in <code>Debt Tracker</code>, which <code>Person</code> can reference. This would allow <code>Address Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Person</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
+<br>
+<span class="image"><img src="images/ModelClassBetterOopDiagram.png" alt="ModelClassBetterOopDiagram" width="800"></span>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/StorageClassDiagram.png" alt="StorageClassDiagram" width="800">
+</div>
+<div class="title">Figure 9. Structure of the Storage Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Storage</code> component,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>can save <code>UserPref</code> objects in json format and read it back.</p>
+</li>
+<li>
+<p>can save the Debt Tracker data in xml format and read it back.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
+<div class="paragraph">
+<p>Classes used by multiple components are in the <code>seedu.FinancialDatabase.commons</code> package.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="implementation"><a class="link" href="#implementation">3. Implementation</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section describes some noteworthy details on how certain features are implemented.</p>
+</div>
+<div class="sect2">
+<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">3.1. Undo/Redo feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">3.1.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The undo/redo mechanism is facilitated by <code>VersionedFinancialDatabase</code>.
+It extends <code>FinancialDatabase</code> with an undo/redo history, stored internally as an <code>financialDatabaseStateList</code> and <code>currentStatePointer</code>.
+Additionally, it implements the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>VersionedFinancialDatabase#commit()</code>&#8201;&#8212;&#8201;Saves the current financial database state in its history.</p>
+</li>
+<li>
+<p><code>VersionedFinancialDatabase#undo()</code>&#8201;&#8212;&#8201;Restores the previous financial database state from its history.</p>
+</li>
+<li>
+<p><code>VersionedFinancialDatabase#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone financial database state from its history.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitFinancialDatabase()</code>, <code>Model#undoFinancialDatabase()</code> and <code>Model#redoFinancialDatabase()</code> respectively.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application for the first time. The <code>VersionedFinancialDatabase</code> will be initialized with the initial address book state, and the <code>currentStatePointer</code> pointing to that single address book state.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoStartingStateListDiagram.png" alt="UndoRedoStartingStateListDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th transaction in the financial database. The <code>delete</code> command calls <code>Model#commitFinancialDatabasek()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoNewCommand1StateListDiagram.png" alt="UndoRedoNewCommand1StateListDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new transaction. The <code>add</code> command also calls <code>Model#commitFinancialDatabase()</code>, causing another modified address book state to be saved into the <code>FinancialDatabaseStateList</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoNewCommand2StateListDiagram.png" alt="UndoRedoNewCommand2StateListDiagram" width="800">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If a command fails its execution, it will not call <code>Model#commitFinancialDatabase()</code>, so the financial database state will not be saved into the <code>financialDatabaseStateList</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 4. The user now decides that adding the transaction was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoFinancialDatabase()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoExecuteUndoStateListDiagram.png" alt="UndoRedoExecuteUndoStateListDiagram" width="800">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the <code>currentStatePointer</code> is at index 0, pointing to the initial financial database state, then there are no previous financial database states to restore. The <code>undo</code> command uses <code>Model#canUndoFinancialDatabase()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the undo operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoSequenceDiagram.png" alt="UndoRedoSequenceDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoFinancialDatabase()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the financial database to that state.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the <code>currentStatePointer</code> is at index <code>FinancialDatabaseStateList.size() - 1</code>, pointing to the latest financial database state, then there are no undone address book states to restore. The <code>redo</code> command uses <code>Model#canRedoFinancialDatabase()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the financial database, such as <code>list</code>, will usually not call <code>Model#commitFinancialDatabase()</code>, <code>Model#undoFinancialDatabase()</code> or <code>Model#redoFinancialDatabase()</code>. Thus, the <code>financialDatabaseStateList</code> remains unchanged.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoNewCommand3StateListDiagram.png" alt="UndoRedoNewCommand3StateListDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitFinancialDatabase()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>financialDatabaseStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoNewCommand4StateListDiagram.png" alt="UndoRedoNewCommand4StateListDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UndoRedoActivityDiagram.png" alt="UndoRedoActivityDiagram" width="650">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Saves the entire address book.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: May have performance issues in terms of memory usage.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the transaction being deleted).</p>
+</li>
+<li>
+<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of financial database states.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
+</li>
+<li>
+<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedFinancialDatabase</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
+</li>
+<li>
+<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">3.2. Logging</a></h3>
+<div class="paragraph">
+<p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.3, &#8220;Configuration&#8221;</a>)</p>
+</li>
+<li>
+<p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
+</li>
+<li>
+<p>Currently log messages are output through: <code>Console</code> and to a <code>.log</code> file.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Logging Levels</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SEVERE</code> : Critical problem detected which may possibly cause the termination of the application</p>
+</li>
+<li>
+<p><code>WARNING</code> : Can continue, but with caution</p>
+</li>
+<li>
+<p><code>INFO</code> : Information showing the noteworthy actions by the App</p>
+</li>
+<li>
+<p><code>FINE</code> : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.3. Configuration</a></h3>
+<div class="paragraph">
+<p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="documentation"><a class="link" href="#documentation">4. Documentation</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We use asciidoc for writing documentation.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+We chose asciidoc over Markdown because asciidoc, although a bit more complex than Markdown, provides more flexibility in formatting.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="editing-documentation"><a class="link" href="#editing-documentation">4.1. Editing Documentation</a></h3>
+<div class="paragraph">
+<p>See <a href="UsingGradle.html#rendering-asciidoc-files">UsingGradle.adoc</a> to learn how to render <code>.adoc</code> files locally to preview the end result of your edits.
+Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows you to preview the changes you have made to your <code>.adoc</code> files in real-time.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="publishing-documentation"><a class="link" href="#publishing-documentation">4.2. Publishing Documentation</a></h3>
+<div class="paragraph">
+<p>See <a href="UsingTravis.html#deploying-github-pages">UsingTravis.adoc</a> to learn how to deploy GitHub Pages using Travis.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="converting-documentation-to-pdf-format"><a class="link" href="#converting-documentation-to-pdf-format">4.3. Converting Documentation to PDF format</a></h3>
+<div class="paragraph">
+<p>We use <a href="https://www.google.com/chrome/browser/desktop/">Google Chrome</a> for converting documentation to PDF format, as Chrome&#8217;s PDF engine preserves hyperlinks used in webpages.</p>
+</div>
+<div class="paragraph">
+<p>Here are the steps to convert the project documentation files to PDF format.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Follow the instructions in <a href="UsingGradle.html#rendering-asciidoc-files">UsingGradle.adoc</a> to convert the AsciiDoc files in the <code>docs/</code> directory to HTML format.</p>
+</li>
+<li>
+<p>Go to your generated HTML files in the <code>build/docs</code> folder, right click on them and select <code>Open with</code> &#8594; <code>Google Chrome</code>.</p>
+</li>
+<li>
+<p>Within Chrome, click on the <code>Print</code> option in Chrome&#8217;s menu.</p>
+</li>
+<li>
+<p>Set the destination to <code>Save as PDF</code>, then click <code>Save</code> to save a copy of the file in PDF format. For best results, use the settings indicated in the screenshot below.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
+</div>
+<div class="title">Figure 10. Saving documentation as PDF files in Chrome</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Docs-SiteWideDocSettings"><a class="link" href="#Docs-SiteWideDocSettings">4.4. Site-wide Documentation Settings</a></h3>
+<div class="paragraph">
+<p>The <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/build.gradle"><code>build.gradle</code></a> file specifies some project-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how all documentation files within this project are rendered.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Attributes left unset in the <code>build.gradle</code> file will use their <strong>default value</strong>, if any.
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. List of site-wide attributes</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 50%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: default;"></th>
+<th class="tableblock halign-left valign-top" style="background-color: default;">Attribute name</th>
+<th class="tableblock halign-left valign-top" style="background-color: default;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock">Default value</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: default;"><div><div class="paragraph">
+<p><code>site-name</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock">The name of the website.
+If set, the name will be displayed near the top of the page.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock"><em>not set</em></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: default;"><div><div class="paragraph">
+<p><code>site-githuburl</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock">URL to the site&#8217;s repository on <a href="https://github.com">GitHub</a>.
+Setting this will add a "View on GitHub" link in the navigation bar.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock"><em>not set</em></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: default;"><div><div class="paragraph">
+<p><code>site-seedu</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock">Define this attribute if the project is an official SE-EDU project.
+This will render the SE-EDU navigation bar at the top of the page, and add some SE-EDU-specific navigation items.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="Docs-PerFileDocSettings"><a class="link" href="#Docs-PerFileDocSettings">4.5. Per-file Documentation Settings</a></h3>
+<div class="paragraph">
+<p>Each <code>.adoc</code> file may also specify some file-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how the file is rendered.</p>
+</div>
+<div class="paragraph">
+<p>Asciidoctor&#8217;s <a href="https://asciidoctor.org/docs/user-manual/#builtin-attributes">built-in attributes</a> may be specified and used as well.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Attributes left unset in <code>.adoc</code> files will use their <strong>default value</strong>, if any.
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. List of per-file attributes, excluding Asciidoctor&#8217;s built-in attributes</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 50%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: default;">Attribute name</th>
+<th class="tableblock halign-left valign-top" style="background-color: default;">Description</th>
+<th class="tableblock halign-left valign-top" style="background-color: default;">Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock"><code>site-section</code></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: default;"><div><div class="paragraph">
+<p>Site section that the document belongs to.
+This will cause the associated item in the navigation bar to be highlighted.
+One of: <code>UserGuide</code>, <code>DeveloperGuide</code>, <code>LearningOutcomes</code>*, <code>AboutUs</code>, <code>ContactUs</code></p>
+</div>
+<div class="paragraph">
+<p><em>* Official SE-EDU projects only</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock"><em>not set</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock"><code>no-site-header</code></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: default;"><div><div class="paragraph">
+<p>Set this attribute to remove the site navigation bar.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock"><em>not set</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="site-template"><a class="link" href="#site-template">4.6. Site Template</a></h3>
+<div class="paragraph">
+<p>The files in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/docs/stylesheets"><code>docs/stylesheets</code></a> are the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS stylesheets</a> of the site.
+You can modify them to change some properties of the site&#8217;s design.</p>
+</div>
+<div class="paragraph">
+<p>The files in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/docs/templates"><code>docs/templates</code></a> controls the rendering of <code>.adoc</code> files into HTML5.
+These template files are written in a mixture of <a href="https://www.ruby-lang.org">Ruby</a> and <a href="http://slim-lang.com">Slim</a>.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Modifying the template files in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/docs/templates"><code>docs/templates</code></a> requires some knowledge and experience with Ruby and Asciidoctor&#8217;s API.
+You should only modify them if you need greater control over the site&#8217;s layout than what stylesheets can provide.
+The SE-EDU team does not provide support for modified template files.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Testing"><a class="link" href="#Testing">5. Testing</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="running-tests"><a class="link" href="#running-tests">5.1. Running Tests</a></h3>
+<div class="paragraph">
+<p>There are three ways to run tests.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The most reliable way to run tests is the 3rd one. The first two methods might fail some GUI tests due to platform/resolution-specific idiosyncrasies.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Method 1: Using IntelliJ JUnit test runner</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To run all tests, right-click on the <code>src/test/java</code> folder and choose <code>Run 'All Tests'</code></p>
+</li>
+<li>
+<p>To run a subset of tests, you can right-click on a test package, test class, or a test and choose <code>Run 'ABC'</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Method 2: Using Gradle</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Open a console and run the command <code>gradlew clean allTests</code> (Mac/Linux: <code>./gradlew clean allTests</code>)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run tests using Gradle.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Method 3: Using Gradle (headless)</strong></p>
+</div>
+<div class="paragraph">
+<p>Thanks to the <a href="https://github.com/TestFX/TestFX">TestFX</a> library we use, our GUI tests can be run in the <em>headless</em> mode. In the headless mode, GUI tests do not show up on the screen. That means the developer can do other things on the Computer while the tests are running.</p>
+</div>
+<div class="paragraph">
+<p>To run tests in headless mode, open a console and run the command <code>gradlew clean headless allTests</code> (Mac/Linux: <code>./gradlew clean headless allTests</code>)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="types-of-tests"><a class="link" href="#types-of-tests">5.2. Types of tests</a></h3>
+<div class="paragraph">
+<p>We have two types of tests:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>GUI Tests</strong> - These are tests involving the GUI. They include,</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><em>System Tests</em> that test the entire App by simulating user actions on the GUI. These are in the <code>systemtests</code> package.</p>
+</li>
+<li>
+<p><em>Unit tests</em> that test the individual components. These are in <code>seedu.address.ui</code> package.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Non-GUI Tests</strong> - These are tests not involving the GUI. They include,</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><em>Unit tests</em> targeting the lowest level methods/classes.<br>
+e.g. <code>seedu.address.commons.StringUtilTest</code></p>
+</li>
+<li>
+<p><em>Integration tests</em> that are checking the integration of multiple code units (those code units are assumed to be working).<br>
+e.g. <code>seedu.address.storage.StorageManagerTest</code></p>
+</li>
+<li>
+<p>Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are connected together.<br>
+e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="troubleshooting-testing"><a class="link" href="#troubleshooting-testing">5.3. Troubleshooting Testing</a></h3>
+<div class="paragraph">
+<p><strong>Problem: <code>HelpWindowTest</code> fails with a <code>NullPointerException</code>.</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Reason: One of its dependencies, <code>HelpWindow.html</code> in <code>src/main/resources/docs</code> is missing.</p>
+</li>
+<li>
+<p>Solution: Execute Gradle task <code>processResources</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dev-ops"><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="build-automation"><a class="link" href="#build-automation">6.1. Build Automation</a></h3>
+<div class="paragraph">
+<p>See <a href="UsingGradle.html">UsingGradle.adoc</a> to learn how to use Gradle for build automation.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="continuous-integration"><a class="link" href="#continuous-integration">6.2. Continuous Integration</a></h3>
+<div class="paragraph">
+<p>We use <a href="https://travis-ci.org/">Travis CI</a> and <a href="https://www.appveyor.com/">AppVeyor</a> to perform <em>Continuous Integration</em> on our projects. See <a href="UsingTravis.html">UsingTravis.adoc</a> and <a href="UsingAppVeyor.html">UsingAppVeyor.adoc</a> for more details.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="coverage-reporting"><a class="link" href="#coverage-reporting">6.3. Coverage Reporting</a></h3>
+<div class="paragraph">
+<p>We use <a href="https://coveralls.io/">Coveralls</a> to track the code coverage of our projects. See <a href="UsingCoveralls.html">UsingCoveralls.adoc</a> for more details.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="documentation-previews"><a class="link" href="#documentation-previews">6.4. Documentation Previews</a></h3>
+<div class="paragraph">
+<p>When a pull request has changes to asciidoc files, you can use <a href="https://www.netlify.com/">Netlify</a> to see a preview of how the HTML version of those asciidoc files will look like when the pull request is merged. See <a href="UsingNetlify.html">UsingNetlify.adoc</a> for more details.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="making-a-release"><a class="link" href="#making-a-release">6.5. Making a Release</a></h3>
+<div class="paragraph">
+<p>Here are the steps to create a new release.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Update the version number in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp.java</code></a>.</p>
+</li>
+<li>
+<p>Generate a JAR file <a href="UsingGradle.html#creating-the-jar-file">using Gradle</a>.</p>
+</li>
+<li>
+<p>Tag the repo with the version number. e.g. <code>v0.1</code></p>
+</li>
+<li>
+<p><a href="https://help.github.com/articles/creating-releases/">Create a new release using GitHub</a> and upload the JAR file you created.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="managing-dependencies"><a class="link" href="#managing-dependencies">6.6. Managing Dependencies</a></h3>
+<div class="paragraph">
+<p>A project often depends on third-party libraries. For example, Debt Tracker depends on the <a href="http://wiki.fasterxml.com/JacksonHome">Jackson library</a> for XML parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives.<br>
+a. Include those libraries in the repo (this bloats the repo size)<br>
+b. Require developers to download those libraries manually (this creates extra work for developers)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix A: Instructions for Manual Testing</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Given below are instructions to test the app manually.</p>
+</div>
+<div class="sect2">
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">A.1. Launch and Shutdown</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Initial launch</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Download the jar file and copy into an empty folder</p>
+</li>
+<li>
+<p>Double-click the jar file<br>
+Expected: Shows the GUI with a set of sample transactions. The window size may not be optimum.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Saving window preferences</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Resize the window to an optimum size. Move the window to a different location. Close the window.</p>
+</li>
+<li>
+<p>Re-launch the app by double-clicking the jar file.<br>
+Expected: The most recent window size and location is retained.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-transaction"><a class="link" href="#deleting-a-transaction">A.2. Deleting a transaction</a></h3>
+<div class="paragraph">
+<p>Deletes a transaction while all transactions are listed</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Prerequisite: There must be at least one transaction in the database.</p>
+</li>
+<li>
+<p>Test case: <code>delete 1</code><br>
+Expected: First transaction is deleted from the list. Details of the deleted transaction shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>delete 0</code><br>
+Expected: No transaction is deleted. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-profile-image"><a class="link" href="#adding-a-profile-image">A.3. Adding a Profile Image</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Prerequisite: The Profile Image should not exceed 10MB.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Advantage: It would prevent user from uploading large files as the application may be unstable.</p>
+</li>
+<li>
+<p>Prerequisities: You have a png image that is less than 10MB at Users folder.<br>
+TestCase: <code>uploadphoto 3 up/Users/xiaoyeong.png</code><br>
+Expected: Your Profile Picture will be displayed.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>This is the <code>sequence diagram</code> for the <code>updatephoto</code> command<br></p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/LogicComponentDiagram2.png" alt="LogicComponentDiagram2" width="800">
+</div>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The user executes the <code>updatephoto INDEX up/FILEPATH</code> command, with parameters <code>INDEX</code> and <code>FILEPATH</code></p>
+</li>
+<li>
+<p>The <code>FinancialDatabaseParser</code> class parses the command and create a new <code>UploadPhotoCommand</code> class.</p>
+</li>
+<li>
+<p>New <code>Photo</code> object is created, which contain the image referenced by <code>FILEPATH</code>.
+&#8230;&#8203;If the FILEPATH&#8217;s is invalid or equals to  'delete', it will display the default picture.</p>
+</li>
+<li>
+<p>The new <code>Photo</code> is attached to the <code>Transaction</code> at <code>INDEX</code></p>
+</li>
+<li>
+<p>The new photo is displayed and updated</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="marking-transactions-as-paid"><a class="link" href="#marking-transactions-as-paid">A.4. Marking transactions as paid</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Prerequisite: The index the user keyed in must have a valid transaction at that numbered entry in the transactions
+list under the Current Transactions tab.</p>
+</li>
+<li>
+<p>Test cases:<br></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Input: <code>paid 1</code><br>
+Output: If the transactions list under the Current Transactions tab is at least 3 entries long, the third
+transaction from that list is deleted, and added to the transactions list under the Past Transactions tab.</p>
+</li>
+<li>
+<p>Input: <code>paid x</code> (where x is larger than the list size)<br>
+Output: Error details (showing an invalid index was keyed in) will be shown in the results display.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filtering-transactions"><a class="link" href="#filtering-transactions">A.5. Filtering transactions</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Prerequisite: Command input must adhere strictly to specified format</p>
+</li>
+<li>
+<p>Test cases:<br></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Input: <code>filter n/alex e/example.com</code><br>
+Output: Lists all transactions with name 'alex' with an 'example.com' email</p>
+</li>
+<li>
+<p>Input: <code>filter tdmin/10/11/2018 tdmax/14/12/2018</code><br>
+Output: Lists all transactions with deadline between 10/11/2018 and 14/12/2018</p>
+</li>
+<li>
+<p>Input: <code>filter n/alex e/example.com and/ or/</code>
+Output: Command fails. Error details shown in the results display.</p>
+</li>
+<li>
+<p>Inputs: <code>filter</code>, <code>filter n/;;</code>,<code>filter or/</code>
+Output: Error details shown in the results display (same as above).</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="using-the-google-calendar-service"><a class="link" href="#using-the-google-calendar-service">A.6. Using the Google Calendar service</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Logging in with a Google account</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Enter <code>calendar login</code> into the command box.</p>
+</li>
+<li>
+<p>Browser will launch with an authentication prompt.</p>
+</li>
+<li>
+<p>Enter your Google account details for authentication. There are three possible options for this:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Use an existing Google account</p>
+</li>
+<li>
+<p>Create a new Google account for testing</p>
+</li>
+<li>
+<p>Login with the provided test account (not recommended):</p>
+<div class="literalblock">
+<div class="content">
+<pre>Username: debttracker2103@gmail.com
+Password: 2103testaccount</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use of the provided test account is not recommended as it may produce unexpected results when viewing/syncing the calendar data due to the possibility of concurrent users. Only use if you do not have access to and are unable to create a new Google account.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Viewing the Calendar</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Enter <code>calendar show</code> in the command box to view the Google calendar in-app.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Syncing the Calendar</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Calendar data is synced automatically when entering a command that modifies the debt tracker data.</p>
+</li>
+<li>
+<p>To perform a manual sync in cases where the calendar data is not in sync with the debt tracker app, enter <code>calendar sync</code> into the command box.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="converting-currencies"><a class="link" href="#converting-currencies">A.7. Converting currencies</a></h3>
+<div class="paragraph">
+<p>Converting the amounts of all the transactions in the database to their respective amounts in the <strong>base currency, Singapore Dollars.</strong><br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Prerequisites:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The application must have an internet connection.<br></p>
+</li>
+<li>
+<p>All the amounts in the transaction are valid.<br></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case:<br></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Input: <code>convert</code>, <code>convert x</code> (x is any random input)<br>
+Output: The amounts in all the transactions conducted in foreign currencies will converted to Singapore Dollars.<br></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="calculating-interest"><a class="link" href="#calculating-interest">A.8. Calculating interest</a></h3>
+<div class="paragraph">
+<p>Calculates the interest on all the transaction amounts based on the provided <strong>monthly interest rate</strong>
+(which is capped at a <strong>maximum of 4.00%</strong>), following either the <strong>simple</strong> or <strong>compound</strong> interest scheme.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Prerequisite: All the transactions in the database have a valid amount.<br></p>
+</li>
+<li>
+<p>Test cases:<br></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Inputs: <code>interest simple 1.00%</code>, <code>interest SIMPLE 1.00%</code>, <code>interest Simple 1.00%</code><br>
+Output: Those transactions whose deadline is more than a month have their amounts incremented by the interest amount.<br></p>
+</li>
+<li>
+<p>Input: <code>interest sample 1.00%</code><br>
+Output: Error message is shown in the results display due to the wrongly entered interest scheme.<br></p>
+</li>
+<li>
+<p>Input: <code>interest simple 1.0%</code>, <code>interest simple 1.000%</code>, <code>interest simple 1</code>
+Output: Error message is shown in the results display because the interest rate is formatted incorrectly.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sorting-transactions"><a class="link" href="#sorting-transactions">A.9. Sorting transactions</a></h3>
+<div class="paragraph">
+<p>Sorts all the transactions based on <strong>transaction amount</strong>, <strong>transaction type</strong> or <strong>transaction deadline</strong> if the respective parameters
+are provided. Otherwise, the transactions are sorted in alphabetical ordering of the person&#8217;s name and
+the tie is broken using the person&#8217;s email or phone number.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Prerequisites:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>All the transactions are converted to the base currency using the <code>convert</code> command.<br></p>
+</li>
+<li>
+<p>All the attributes of the transaction are valid.<br></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test cases:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Input: <code>sort amount</code><br>
+Output: All the transactions are sorted in the descending order of amount values.<br></p>
+</li>
+<li>
+<p>Input: <code>sort type</code><br>
+Output: All the transactions are sorted in the alphabetical ordering of the types i.e. the debts come before the loans.<br></p>
+</li>
+<li>
+<p>Input: <code>sort deadline</code><br>
+Output: All the transactions are sorted from the earliest to the latest deadlines.<br></p>
+</li>
+<li>
+<p>Input: <code>sort</code>, <code>sort x</code> (where x is any random input)<br>
+Output: All the transactions are sorted in alphabetical order of the person names, with tie broken using the person&#8217;s email or phone number.<br></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="user-stories"><a class="link" href="#user-stories">Appendix B: User Stories</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Priorities:  High (should have)<br>
@@ -321,10 +1625,10 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Priority</th>
-<th class="tableblock halign-left valign-top">As a ..</th>
-<th class="tableblock halign-left valign-top">I want to ..</th>
-<th class="tableblock halign-left valign-top">So that I can</th>
+<th class="tableblock halign-left valign-top" style="background-color: default;">Priority</th>
+<th class="tableblock halign-left valign-top" style="background-color: default;">As a ..</th>
+<th class="tableblock halign-left valign-top" style="background-color: default;">I want to ..</th>
+<th class="tableblock halign-left valign-top" style="background-color: default;">So that I can</th>
 </tr>
 </thead>
 <tbody>
@@ -489,18 +1793,20 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 </div>
 </div>
 <div class="sect1">
-<h2 id="use-cases"><a class="link" href="#use-cases">3. Use Cases</a></h2>
+<h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>(For all use cases below, the <strong>System</strong> is the <code>DebtTracker</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+</div>
 <div class="sect2">
-<h3 id="analyses-financial-income"><a class="link" href="#analyses-financial-income">3.1. Analyses Financial Income</a></h3>
+<h3 id="use-case-analyse-financial-income"><a class="link" href="#use-case-analyse-financial-income">C.1. Use case: Analyse Financial Income</a></h3>
 <div class="paragraph">
 <p>MSS:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests analyses financial income according to
-certain conditions.</p>
+<p>User requests analyses financial income according to certain conditions.</p>
 </li>
 <li>
 <p>User can choose to enter a valid date or not enter any text and press enter.</p>
@@ -554,7 +1860,7 @@ certain conditions.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="wildcard-search"><a class="link" href="#wildcard-search">3.2. Wildcard Search</a></h3>
+<h3 id="use-case-wildcard-search"><a class="link" href="#use-case-wildcard-search">C.2. Use case: Wildcard Search</a></h3>
 <div class="paragraph">
 <p>MSS:</p>
 </div>
@@ -586,7 +1892,7 @@ certain conditions.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="paid"><a class="link" href="#paid">3.3. Paid</a></h3>
+<h3 id="use-case-paid"><a class="link" href="#use-case-paid">C.3. Use case: Paid</a></h3>
 <div class="paragraph">
 <p>MSS:</p>
 </div>
@@ -648,1330 +1954,236 @@ transaction without clearing any of the previous transactions.</p>
 </ol>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="design"><a class="link" href="#design">4. Design</a></h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">4.1. Architecture</a></h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/Architecture.png" alt="Architecture" width="600">
-</div>
-<div class="title">Figure 1. Architecture Diagram</div>
-</div>
-<div class="paragraph">
-<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The <code>.pptx</code> files used to create diagrams in this document can be found in the <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/docs/diagrams/">diagrams</a> folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose <code>Save as picture</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><code>Main</code> has only one class called <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>At app launch: Initializes the components in the correct sequence, and connects them up with each other.</p>
-</li>
-<li>
-<p>At shut down: Shuts down the components and invokes cleanup method where necessary.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><a href="#Design-Commons"><strong><code>Commons</code></strong></a> represents a collection of classes used by multiple other components. Two of those classes play important roles at the architecture level.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>EventsCenter</code> : This class (written using <a href="https://github.com/google/guava/wiki/EventBusExplained">Google&#8217;s Event Bus library</a>) is used by components to communicate with other components using events (i.e. a form of <em>Event Driven</em> design)</p>
-</li>
-<li>
-<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The rest of the App consists of four components.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#Design-Ui"><strong><code>UI</code></strong></a>: The UI of the App.</p>
-</li>
-<li>
-<p><a href="#Design-Logic"><strong><code>Logic</code></strong></a>: The command executor.</p>
-</li>
-<li>
-<p><a href="#Design-Model"><strong><code>Model</code></strong></a>: Holds the data of the App in-memory.</p>
-</li>
-<li>
-<p><a href="#Design-Storage"><strong><code>Storage</code></strong></a>: Reads data from, and writes data to, the hard disk.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Each of the four components</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Defines its <em>API</em> in an <code>interface</code> with the same name as the Component.</p>
-</li>
-<li>
-<p>Exposes its functionality using a <code>{Component Name}Manager</code> class.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
-</div>
-<div class="title">Figure 2. Class Diagram of the Logic Component</div>
-</div>
-<h4 id="events-driven-nature-of-the-design" class="discrete">Events-Driven nature of the design</h4>
-<div class="paragraph">
-<p>The <em>Sequence Diagram</em> below shows how the components interact for the scenario where the user issues the command <code>delete 1</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/SDforDeletePerson.png" alt="SDforDeletePerson" width="800">
-</div>
-<div class="title">Figure 3. Component interactions for <code>delete 1</code> command (part 1)</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Note how the <code>Model</code> simply raises a <code>FinancialDatabaseChangedEvent</code> when the Address Book data are changed, instead of asking the <code>Storage</code> to save the updates to the hard disk.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The diagram below shows how the <code>EventsCenter</code> reacts to that event, which eventually results in the updates being saved to the hard disk and the status bar of the UI being updated to reflect the 'Last Updated' time.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/SDforDeletePersonEventHandling.png" alt="SDforDeletePersonEventHandling" width="800">
-</div>
-<div class="title">Figure 4. Component interactions for <code>delete 1</code> command (part 2)</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Note how the event is propagated through the <code>EventsCenter</code> to the <code>Storage</code> and <code>UI</code> without <code>Model</code> having to be coupled to either of them. This is an example of how this Event Driven approach helps us reduce direct coupling between components.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The sections below give more details of each component.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">4.2. UI component</a></h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/UiClassDiagram.png" alt="UiClassDiagram" width="800">
-</div>
-<div class="title">Figure 5. Structure of the UI Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
-</div>
-<div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code>, <code>BrowserPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
-</div>
-<div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
-</div>
-<div class="paragraph">
-<p>The <code>UI</code> component,</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Executes user commands using the <code>Logic</code> component.</p>
-</li>
-<li>
-<p>Binds itself to some data in the <code>Model</code> so that the UI can auto-update when data in the <code>Model</code> change.</p>
-</li>
-<li>
-<p>Responds to events raised from various parts of the App and updates the UI accordingly.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">4.3. Logic component</a></h3>
-<div id="fig-LogicClassDiagram" class="imageblock">
-<div class="content">
-<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
-</div>
-<div class="title">Figure 6. Structure of the Logic Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> :
-<a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>Logic</code> uses the <code>FinancialDatabaseParser</code> class to parse the user command.</p>
-</li>
-<li>
-<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
-</li>
-<li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a transaction) and/or raise events.</p>
-</li>
-<li>
-<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DeletePersonSdForLogic.png" alt="DeletePersonSdForLogic" width="800">
-</div>
-<div class="title">Figure 7. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">4.4. Model component</a></h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/ModelClassDiagram.png" alt="ModelClassDiagram" width="800">
-</div>
-<div class="title">Figure 8. Structure of the Model Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
-</div>
-<div class="paragraph">
-<p>The <code>Model</code>,</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
-</li>
-<li>
-<p>stores the Debt Tracker data.</p>
-</li>
-<li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Person&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
-</li>
-<li>
-<p>does not depend on any of the other three components.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As a more OOP model, we can store a <code>Tag</code> list in <code>Debt Tracker</code>, which <code>Person</code> can reference. This would allow <code>Address Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Person</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
-<br>
-<span class="image"><img src="images/ModelClassBetterOopDiagram.png" alt="ModelClassBetterOopDiagram" width="800"></span>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">4.5. Storage component</a></h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/StorageClassDiagram.png" alt="StorageClassDiagram" width="800">
-</div>
-<div class="title">Figure 9. Structure of the Storage Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
-</div>
-<div class="paragraph">
-<p>The <code>Storage</code> component,</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>can save <code>UserPref</code> objects in json format and read it back.</p>
-</li>
-<li>
-<p>can save the Debt Tracker data in xml format and read it back.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">4.6. Common classes</a></h3>
-<div class="paragraph">
-<p>Classes used by multiple components are in the <code>seedu.FinancialDatabase.commons</code> package.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="implementation"><a class="link" href="#implementation">5. Implementation</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This section describes some noteworthy details on how certain features are implemented.</p>
-</div>
-<div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">5.1. Undo/Redo feature</a></h3>
-<div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">5.1.1. Current Implementation</a></h4>
-<div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedFinancialDatabase</code>.
-It extends <code>FinancialDatabase</code> with an undo/redo history, stored internally as an <code>financialDatabaseStateList</code> and <code>currentStatePointer</code>.
-Additionally, it implements the following operations:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>VersionedFinancialDatabase#commit()</code>&#8201;&#8212;&#8201;Saves the current financial database state in its history.</p>
-</li>
-<li>
-<p><code>VersionedFinancialDatabase#undo()</code>&#8201;&#8212;&#8201;Restores the previous financial database state from its history.</p>
-</li>
-<li>
-<p><code>VersionedFinancialDatabase#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone financial database state from its history.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitFinancialDatabase()</code>, <code>Model#undoFinancialDatabase()</code> and <code>Model#redoFinancialDatabase()</code> respectively.</p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedFinancialDatabase</code> will be initialized with the initial address book state, and the <code>currentStatePointer</code> pointing to that single address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoStartingStateListDiagram.png" alt="UndoRedoStartingStateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th transaction in the financial database. The <code>delete</code> command calls <code>Model#commitFinancialDatabasek()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoNewCommand1StateListDiagram.png" alt="UndoRedoNewCommand1StateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new transaction. The <code>add</code> command also calls <code>Model#commitFinancialDatabase()</code>, causing another modified address book state to be saved into the <code>FinancialDatabaseStateList</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoNewCommand2StateListDiagram.png" alt="UndoRedoNewCommand2StateListDiagram" width="800">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If a command fails its execution, it will not call <code>Model#commitFinancialDatabase()</code>, so the financial database state will not be saved into the <code>financialDatabaseStateList</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 4. The user now decides that adding the transaction was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoFinancialDatabase()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoExecuteUndoStateListDiagram.png" alt="UndoRedoExecuteUndoStateListDiagram" width="800">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial financial database state, then there are no previous financial database states to restore. The <code>undo</code> command uses <code>Model#canUndoFinancialDatabase()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the undo operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoSequenceDiagram.png" alt="UndoRedoSequenceDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoFinancialDatabase()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the financial database to that state.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index <code>FinancialDatabaseStateList.size() - 1</code>, pointing to the latest financial database state, then there are no undone address book states to restore. The <code>redo</code> command uses <code>Model#canRedoFinancialDatabase()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the financial database, such as <code>list</code>, will usually not call <code>Model#commitFinancialDatabase()</code>, <code>Model#undoFinancialDatabase()</code> or <code>Model#redoFinancialDatabase()</code>. Thus, the <code>financialDatabaseStateList</code> remains unchanged.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoNewCommand3StateListDiagram.png" alt="UndoRedoNewCommand3StateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitFinancialDatabase()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>financialDatabaseStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoNewCommand4StateListDiagram.png" alt="UndoRedoNewCommand4StateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoActivityDiagram.png" alt="UndoRedoActivityDiagram" width="650">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">5.1.2. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire address book.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement.</p>
-</li>
-<li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the transaction being deleted).</p>
-</li>
-<li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of financial database states.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
-</li>
-<li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedFinancialDatabase</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
-</li>
-<li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="use-cases-2"><a class="link" href="#use-cases-2">5.1.3. Use Cases</a></h4>
-<div class="sect4">
-<h5 id="use-case-analyses-financial-income"><a class="link" href="#use-case-analyses-financial-income">Use case: Analyses Financial Income</a></h5>
+<h3 id="use-case-convert-transaction-amounts"><a class="link" href="#use-case-convert-transaction-amounts">C.4. Use case: Convert transaction amounts</a></h3>
 <div class="paragraph">
 <p>MSS:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests analyses financial income according to
-certain conditions.</p>
+<p>The user requests to convert all the transaction amounts to the base currency, Singapore Dollars.<br></p>
 </li>
 <li>
-<p>User can choose to enter a valid date or not enter any text and press enter.</p>
+<p>The system converts all those transaction amounts in foreign currencies to the base currency.
+Those transaction amounts in Singapore Dollars reflect no change.<br></p>
 </li>
 <li>
-<p>The system will calculate the income up to the data enter or generate the whole financial income base on all the transaction in the database.</p>
+<p>The system list all the transactions with updated amounts.<br></p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <p>Extensions:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>2a. User enters invalid date</pre>
+<div class="paragraph">
+<p>1a. The user enters an additional parameter for the command<br></p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The system ignores the additional parameter and continues with the conversion as per normal.<br></p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>2a. The application is not connected to the internet.<br></p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The user is informed that there is an error reading the value from the API.<br></p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>2b. The database has no transactions contained within it.<br></p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The system responds with an error message because the operation is invalid on an empty database.<br></p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ol>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>The system raises an error specifying that the given date is invalid.</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>Use case ends.</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>2b.  User enters no conditions.</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>The system generates the total financial income base on all the transaction in the database.</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>Use case ends.</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>2c. User enters valid date</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>The system generates the total financial income up to the given date.</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>Use case ends.</pre>
-</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="use-case-filter-transactions-by-criteria"><a class="link" href="#use-case-filter-transactions-by-criteria">Use case: Filter Transactions by criteria</a></h5>
+<div class="sect2">
+<h3 id="use-case-calculate-interest-on-transaction-amounts"><a class="link" href="#use-case-calculate-interest-on-transaction-amounts">C.5. Use case: Calculate interest on transaction amounts</a></h3>
 <div class="paragraph">
 <p>MSS:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>1.  User requests to view transactions that matches certain criteria</p>
+<p>The user requests to calculate interests on all the transaction amounts.<br></p>
 </li>
 <li>
-<p>2.  The System displays transactions that matches the criteria specified by the user<br>
+<p>The user enters the interest scheme (simple/compound) and the interest rate.<br></p>
+</li>
+<li>
+<p>The system calculates interest on the amounts of those transactions with a deadline more than a month away.
+The amounts of the transactions with deadlines within a month period are not updated.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Extensions:</p>
+</div>
+<div class="paragraph">
+<p>1a. There are no transactions in the database</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The system responds with an error message because the operation is invalid on an empty database.</p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>2a. The user enters a wrong interest scheme</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The system responds with an error message for the user to correct the scheme.</p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>2b. The user enters a wrong interest rate</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The system responds with an error message for the user to adjust the interest rate.</p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="use-case-sort-transactions-by-parameter"><a class="link" href="#use-case-sort-transactions-by-parameter">C.5.1. Use case: Sort transactions by parameter</a></h4>
+<div class="paragraph">
+<p>MSS:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user requests to sort the transaction based on a given parameter.</p>
+</li>
+<li>
+<p>The system sorts all the transactions based on the given parameter.<br></p>
+</li>
+<li>
+<p>The system lists all the transactions according to the new sorting order.<br></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Extensions:</p>
+</div>
+<div class="paragraph">
+<p>1a. The user enters an invalid parameter</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The system sorts by the default parameter: the name of the transactor.</p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>1b. The user enters no parameters</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The system sorts by the same default parameter as above</p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>2a. There are no transactions in the database</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The system responds with an error message due to the empty database.</p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ol>
+</div>
+<div class="sect4">
+<h5 id="use-case-filter-transactions-by-criteria"><a class="link" href="#use-case-filter-transactions-by-criteria">Use case: Filter transactions by criteria</a></h5>
+<div class="paragraph">
+<p>MSS:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to view transactions that matches certain criteria</p>
+</li>
+<li>
+<p>The System displays transactions that matches the criteria specified by the user<br>
 Use case ends.</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="paragraph">
 <p>Extensions:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>1a. User does not specify any criteria</p>
-<div class="ulist">
-<ul>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
 <li>
 <p>The system raises an error and indicates to the user the correct command format.<br></p>
 </li>
 <li>
 <p>Use case ends.</p>
 </li>
-</ul>
+</ol>
 </div>
-</li>
-<li>
+<div class="paragraph">
 <p>1b. User enters an invalid input for a criteria</p>
-<div class="ulist">
-<ul>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
 <li>
 <p>The system raises an error and indicates to the user the correct input format</p>
 </li>
 <li>
 <p>Use case ends.</p>
 </li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">5.2. Logging</a></h3>
-<div class="paragraph">
-<p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 5.3, &#8220;Configuration&#8221;</a>)</p>
-</li>
-<li>
-<p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
-</li>
-<li>
-<p>Currently log messages are output through: <code>Console</code> and to a <code>.log</code> file.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Logging Levels</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>SEVERE</code> : Critical problem detected which may possibly cause the termination of the application</p>
-</li>
-<li>
-<p><code>WARNING</code> : Can continue, but with caution</p>
-</li>
-<li>
-<p><code>INFO</code> : Information showing the noteworthy actions by the App</p>
-</li>
-<li>
-<p><code>FINE</code> : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">5.3. Configuration</a></h3>
-<div class="paragraph">
-<p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">6. Documentation</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>We use asciidoc for writing documentation.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-We chose asciidoc over Markdown because asciidoc, although a bit more complex than Markdown, provides more flexibility in formatting.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="editing-documentation"><a class="link" href="#editing-documentation">6.1. Editing Documentation</a></h3>
-<div class="paragraph">
-<p>See <a href="UsingGradle.html#rendering-asciidoc-files">UsingGradle.adoc</a> to learn how to render <code>.adoc</code> files locally to preview the end result of your edits.
-Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows you to preview the changes you have made to your <code>.adoc</code> files in real-time.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="publishing-documentation"><a class="link" href="#publishing-documentation">6.2. Publishing Documentation</a></h3>
-<div class="paragraph">
-<p>See <a href="UsingTravis.html#deploying-github-pages">UsingTravis.adoc</a> to learn how to deploy GitHub Pages using Travis.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="converting-documentation-to-pdf-format"><a class="link" href="#converting-documentation-to-pdf-format">6.3. Converting Documentation to PDF format</a></h3>
-<div class="paragraph">
-<p>We use <a href="https://www.google.com/chrome/browser/desktop/">Google Chrome</a> for converting documentation to PDF format, as Chrome&#8217;s PDF engine preserves hyperlinks used in webpages.</p>
-</div>
-<div class="paragraph">
-<p>Here are the steps to convert the project documentation files to PDF format.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Follow the instructions in <a href="UsingGradle.html#rendering-asciidoc-files">UsingGradle.adoc</a> to convert the AsciiDoc files in the <code>docs/</code> directory to HTML format.</p>
-</li>
-<li>
-<p>Go to your generated HTML files in the <code>build/docs</code> folder, right click on them and select <code>Open with</code> &#8594; <code>Google Chrome</code>.</p>
-</li>
-<li>
-<p>Within Chrome, click on the <code>Print</code> option in Chrome&#8217;s menu.</p>
-</li>
-<li>
-<p>Set the destination to <code>Save as PDF</code>, then click <code>Save</code> to save a copy of the file in PDF format. For best results, use the settings indicated in the screenshot below.</p>
-</li>
-</ol>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
-</div>
-<div class="title">Figure 10. Saving documentation as PDF files in Chrome</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Docs-SiteWideDocSettings"><a class="link" href="#Docs-SiteWideDocSettings">6.4. Site-wide Documentation Settings</a></h3>
-<div class="paragraph">
-<p>The <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/build.gradle"><code>build.gradle</code></a> file specifies some project-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how all documentation files within this project are rendered.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Attributes left unset in the <code>build.gradle</code> file will use their <strong>default value</strong>, if any.
-</td>
-</tr>
-</table>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 1. List of site-wide attributes</caption>
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 50%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" style="background-color: default;"></th>
-<th class="tableblock halign-left valign-top" style="background-color: default;">Attribute name</th>
-<th class="tableblock halign-left valign-top" style="background-color: default;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock">Default value</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: default;"><div><div class="paragraph">
-<p><code>site-name</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock">The name of the website.
-If set, the name will be displayed near the top of the page.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock"><em>not set</em></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: default;"><div><div class="paragraph">
-<p><code>site-githuburl</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock">URL to the site&#8217;s repository on <a href="https://github.com">GitHub</a>.
-Setting this will add a "View on GitHub" link in the navigation bar.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock"><em>not set</em></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: default;"><div><div class="paragraph">
-<p><code>site-seedu</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock">Define this attribute if the project is an official SE-EDU project.
-This will render the SE-EDU navigation bar at the top of the page, and add some SE-EDU-specific navigation items.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="Docs-PerFileDocSettings"><a class="link" href="#Docs-PerFileDocSettings">6.5. Per-file Documentation Settings</a></h3>
-<div class="paragraph">
-<p>Each <code>.adoc</code> file may also specify some file-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how the file is rendered.</p>
-</div>
-<div class="paragraph">
-<p>Asciidoctor&#8217;s <a href="https://asciidoctor.org/docs/user-manual/#builtin-attributes">built-in attributes</a> may be specified and used as well.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Attributes left unset in <code>.adoc</code> files will use their <strong>default value</strong>, if any.
-</td>
-</tr>
-</table>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 2. List of per-file attributes, excluding Asciidoctor&#8217;s built-in attributes</caption>
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 50%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" style="background-color: default;">Attribute name</th>
-<th class="tableblock halign-left valign-top" style="background-color: default;">Description</th>
-<th class="tableblock halign-left valign-top" style="background-color: default;">Default value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock"><code>site-section</code></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: default;"><div><div class="paragraph">
-<p>Site section that the document belongs to.
-This will cause the associated item in the navigation bar to be highlighted.
-One of: <code>UserGuide</code>, <code>DeveloperGuide</code>, <code>LearningOutcomes</code>*, <code>AboutUs</code>, <code>ContactUs</code></p>
-</div>
-<div class="paragraph">
-<p><em>* Official SE-EDU projects only</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock"><em>not set</em></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock"><code>no-site-header</code></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: default;"><div><div class="paragraph">
-<p>Set this attribute to remove the site navigation bar.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: default;"><p class="tableblock"><em>not set</em></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="site-template"><a class="link" href="#site-template">6.6. Site Template</a></h3>
-<div class="paragraph">
-<p>The files in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/docs/stylesheets"><code>docs/stylesheets</code></a> are the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS stylesheets</a> of the site.
-You can modify them to change some properties of the site&#8217;s design.</p>
-</div>
-<div class="paragraph">
-<p>The files in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/docs/templates"><code>docs/templates</code></a> controls the rendering of <code>.adoc</code> files into HTML5.
-These template files are written in a mixture of <a href="https://www.ruby-lang.org">Ruby</a> and <a href="http://slim-lang.com">Slim</a>.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Modifying the template files in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/docs/templates"><code>docs/templates</code></a> requires some knowledge and experience with Ruby and Asciidoctor&#8217;s API.
-You should only modify them if you need greater control over the site&#8217;s layout than what stylesheets can provide.
-The SE-EDU team does not provide support for modified template files.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="Testing"><a class="link" href="#Testing">7. Testing</a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="running-tests"><a class="link" href="#running-tests">7.1. Running Tests</a></h3>
-<div class="paragraph">
-<p>There are three ways to run tests.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The most reliable way to run tests is the 3rd one. The first two methods might fail some GUI tests due to platform/resolution-specific idiosyncrasies.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><strong>Method 1: Using IntelliJ JUnit test runner</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>To run all tests, right-click on the <code>src/test/java</code> folder and choose <code>Run 'All Tests'</code></p>
-</li>
-<li>
-<p>To run a subset of tests, you can right-click on a test package, test class, or a test and choose <code>Run 'ABC'</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Method 2: Using Gradle</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Open a console and run the command <code>gradlew clean allTests</code> (Mac/Linux: <code>./gradlew clean allTests</code>)</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run tests using Gradle.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><strong>Method 3: Using Gradle (headless)</strong></p>
-</div>
-<div class="paragraph">
-<p>Thanks to the <a href="https://github.com/TestFX/TestFX">TestFX</a> library we use, our GUI tests can be run in the <em>headless</em> mode. In the headless mode, GUI tests do not show up on the screen. That means the developer can do other things on the Computer while the tests are running.</p>
-</div>
-<div class="paragraph">
-<p>To run tests in headless mode, open a console and run the command <code>gradlew clean headless allTests</code> (Mac/Linux: <code>./gradlew clean headless allTests</code>)</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="types-of-tests"><a class="link" href="#types-of-tests">7.2. Types of tests</a></h3>
-<div class="paragraph">
-<p>We have two types of tests:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><strong>GUI Tests</strong> - These are tests involving the GUI. They include,</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p><em>System Tests</em> that test the entire App by simulating user actions on the GUI. These are in the <code>systemtests</code> package.</p>
-</li>
-<li>
-<p><em>Unit tests</em> that test the individual components. These are in <code>seedu.address.ui</code> package.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p><strong>Non-GUI Tests</strong> - These are tests not involving the GUI. They include,</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p><em>Unit tests</em> targeting the lowest level methods/classes.<br>
-e.g. <code>seedu.address.commons.StringUtilTest</code></p>
-</li>
-<li>
-<p><em>Integration tests</em> that are checking the integration of multiple code units (those code units are assumed to be working).<br>
-e.g. <code>seedu.address.storage.StorageManagerTest</code></p>
-</li>
-<li>
-<p>Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are connected together.<br>
-e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="troubleshooting-testing"><a class="link" href="#troubleshooting-testing">7.3. Troubleshooting Testing</a></h3>
-<div class="paragraph">
-<p><strong>Problem: <code>HelpWindowTest</code> fails with a <code>NullPointerException</code>.</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Reason: One of its dependencies, <code>HelpWindow.html</code> in <code>src/main/resources/docs</code> is missing.</p>
-</li>
-<li>
-<p>Solution: Execute Gradle task <code>processResources</code>.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">8. Dev Ops</a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="build-automation"><a class="link" href="#build-automation">8.1. Build Automation</a></h3>
-<div class="paragraph">
-<p>See <a href="UsingGradle.html">UsingGradle.adoc</a> to learn how to use Gradle for build automation.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="continuous-integration"><a class="link" href="#continuous-integration">8.2. Continuous Integration</a></h3>
-<div class="paragraph">
-<p>We use <a href="https://travis-ci.org/">Travis CI</a> and <a href="https://www.appveyor.com/">AppVeyor</a> to perform <em>Continuous Integration</em> on our projects. See <a href="UsingTravis.html">UsingTravis.adoc</a> and <a href="UsingAppVeyor.html">UsingAppVeyor.adoc</a> for more details.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="coverage-reporting"><a class="link" href="#coverage-reporting">8.3. Coverage Reporting</a></h3>
-<div class="paragraph">
-<p>We use <a href="https://coveralls.io/">Coveralls</a> to track the code coverage of our projects. See <a href="UsingCoveralls.html">UsingCoveralls.adoc</a> for more details.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="documentation-previews"><a class="link" href="#documentation-previews">8.4. Documentation Previews</a></h3>
-<div class="paragraph">
-<p>When a pull request has changes to asciidoc files, you can use <a href="https://www.netlify.com/">Netlify</a> to see a preview of how the HTML version of those asciidoc files will look like when the pull request is merged. See <a href="UsingNetlify.html">UsingNetlify.adoc</a> for more details.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="making-a-release"><a class="link" href="#making-a-release">8.5. Making a Release</a></h3>
-<div class="paragraph">
-<p>Here are the steps to create a new release.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Update the version number in <a href="https://github.com/CS2103-AY1819S1-W12-2/main/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp.java</code></a>.</p>
-</li>
-<li>
-<p>Generate a JAR file <a href="UsingGradle.html#creating-the-jar-file">using Gradle</a>.</p>
-</li>
-<li>
-<p>Tag the repo with the version number. e.g. <code>v0.1</code></p>
-</li>
-<li>
-<p><a href="https://help.github.com/articles/creating-releases/">Create a new release using GitHub</a> and upload the JAR file you created.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="managing-dependencies"><a class="link" href="#managing-dependencies">8.6. Managing Dependencies</a></h3>
-<div class="paragraph">
-<p>A project often depends on third-party libraries. For example, Debt Tracker depends on the <a href="http://wiki.fasterxml.com/JacksonHome">Jackson library</a> for XML parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives.<br>
-a. Include those libraries in the repo (this bloats the repo size)<br>
-b. Require developers to download those libraries manually (this creates extra work for developers)</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">9. Instructions for Manual Testing</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Given below are instructions to test the app manually.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-These instructions only provide a starting point for testers to work on; testers are expected to do more <em>exploratory</em> testing.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">9.1. Launch and Shutdown</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Initial launch</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Download the jar file and copy into an empty folder</p>
-</li>
-<li>
-<p>Double-click the jar file<br>
-Expected: Shows the GUI with a set of sample transactions. The window size may not be optimum.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Saving window preferences</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Resize the window to an optimum size. Move the window to a different location. Close the window.</p>
-</li>
-<li>
-<p>Re-launch the app by double-clicking the jar file.<br>
-Expected: The most recent window size and location is retained.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-a-transaction"><a class="link" href="#deleting-a-transaction">9.2. Deleting a transaction</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Deleting a transaction while all transactions are listed</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Prerequisites: List all transactions using the <code>list</code> command. Multiple persons in the list.</p>
-</li>
-<li>
-<p>Test case: <code>delete 1</code><br>
-Expected: First transaction is deleted from the list. Details of the deleted transaction shown in the status message. Timestamp in the status bar is updated.</p>
-</li>
-<li>
-<p>Test case: <code>delete 0</code><br>
-Expected: No transaction is deleted. Error details shown in the status message. Status bar remains the same.</p>
-</li>
-<li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
-Expected: Similar to previous.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">9.3. Saving data</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Dealing with missing/corrupted data files</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="add-profile-image"><a class="link" href="#add-profile-image">9.4. Add Profile Image</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Prerequisites: The Profile Image should not exceed 10MB.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Advantage: It would prevent user from uploading large files as the application may be unstable.</p>
-</li>
-<li>
-<p>Prerequisities: You have a png image that is less than 10MB at Users folder.<br>
-TestCase: <code>uploadphoto 3 up/Users/xiaoyeong.png</code><br>
-Expected: Your Profile Picture will be displayed.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>This is the <code>sequence diagram</code> for the <code>updatephoto</code> command<br></p>
-</li>
-</ol>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/LogicComponentDiagram2.png" alt="LogicComponentDiagram2" width="800">
-</div>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>The user executes the <code>updatephoto INDEX up/FILEPATH</code> command, with parameters <code>INDEX</code> and <code>FILEPATH</code></p>
-</li>
-<li>
-<p>The <code>FinancialDatabaseParser</code> class parses the command and create a new <code>UploadPhotoCommand</code> class.</p>
-</li>
-<li>
-<p>New <code>Photo</code> object is created, which contain the image referenced by <code>FILEPATH</code>.
-&#8230;&#8203;If the FILEPATH&#8217;s is invalid or equals to  'delete', it will display the default picture.</p>
-</li>
-<li>
-<p>The new <code>Photo</code> is attached to the <code>Transaction</code> at <code>INDEX</code></p>
-</li>
-<li>
-<p>The new photo is displayed and updated</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="paid-command"><a class="link" href="#paid-command">9.5. Paid Command</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Prerequisites: The index the user keyed in must have a valid transaction at that numbered entry in the transactions
-list under the Current Transactions tab.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>paid 1</code><br>
-Expected: If the transactions list under the Current Transactions tab is at least 3 entries long, the third
-transaction from that list is deleted, and added to the transactions list under the Past Transactions tab.</p>
-</li>
-<li>
-<p>Incorrect paid commands to try: <code>paid</code>, <code>paid 0</code>, <code>paid x</code> (where x is larger than the list size)<br>
-Expected: Error details (showing an invalid index was keyed in) will be displayed in the results display.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="filter-command"><a class="link" href="#filter-command">9.6. Filter Command</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Prerequisites: Command input must adhere strictly to specified format</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Test case: <code>filter n/alex e/example.com</code><br>
-Expected: Lists all transactions with name 'alex' with an 'example.com' email</p>
-</li>
-<li>
-<p>Test case: <code>filter tdmin/10/11/2018 tdmax/14/12/2018</code><br>
-Expected: Lists all transactions with deadline between 10/11/2018 and 14/12/2018</p>
-</li>
-<li>
-<p>Test case: <code>filter n/alex e/example.com and/ or/</code>
-Expected: Command fails. Error details shown in the status message.</p>
-</li>
-<li>
-<p>Other incorrect filter commands to try: <code>filter</code>, <code>filter n/;;</code>, <code>filter or/</code></p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="using-the-google-calendar-service"><a class="link" href="#using-the-google-calendar-service">9.7. Using the Google Calendar service</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Logging in with a Google account</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Enter <code>calendar login</code> into the command box.</p>
-</li>
-<li>
-<p>Browser will launch with an authentication prompt.</p>
-</li>
-<li>
-<p>Enter your Google account details for authentication. There are three possible options for this:</p>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
-<li>
-<p>Use an existing Google account</p>
-</li>
-<li>
-<p>Create a new Google account for testing</p>
-</li>
-<li>
-<p>Login with the provided test account (not recommended):</p>
-<div class="literalblock">
-<div class="content">
-<pre>Username: debttracker2103@gmail.com
-Password: 2103testaccount</pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Use of the provided test account is not recommended as it may produce unexpected results when viewing/syncing the calendar data due to the possibility of concurrent users. Only use if you do not have access to and are unable to create a new Google account.</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Viewing the Calendar</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Enter <code>calendar show</code> in the command box to view the Google calendar in-app.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Syncing the Calendar</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Calendar data is synced automatically when entering a command that modifies the debt tracker data.</p>
-</li>
-<li>
-<p>To perform a manual sync in cases where the calendar data is not in sync with the debt tracker app, enter <code>calendar sync</code> into the command box.</p>
-</li>
-</ol>
-</div>
-</li>
 </ol>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 07:42:39 UTC</div></div></div></body></html>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 11:09:27 UTC</div></div></div></body></html>
