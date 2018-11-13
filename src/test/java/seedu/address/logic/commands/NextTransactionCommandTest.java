@@ -36,7 +36,7 @@ public class NextTransactionCommandTest {
     @Test
     public void execute_nonEmptyFinancialList() {
         String expectedMessage = String.format(MESSAGE_TRANSACTIONS_LISTED_OVERVIEW, 2);
-        DeadlineContainsKeywordsPredicate predicate = preparePredicate("12/11/2018");
+        DeadlineContainsKeywordsPredicate predicate = preparePredicate("25/12/2018");
         NextTransactionCommand command = new NextTransactionCommand();
         expectedModelWithData.updateFilteredTransactionList(predicate);
         assertCommandSuccessWithModelChange(command, modelWithData, history, expectedMessage);
