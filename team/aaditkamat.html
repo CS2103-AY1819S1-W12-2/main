@@ -179,14 +179,325 @@ in an appropriate format.</p>
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="locating-transactions-by-transaction-s-name-code-find-code"><a class="link" href="#locating-transactions-by-transaction-s-name-code-find-code">Locating transactions by transaction&#8217;s name : <code>find</code></a></h3>
+<div class="paragraph">
+<p>Finds transactions exchanged with any transaction whose name contains any of the given keywords.<br></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="removing-a-debt-code-remove-code"><a class="link" href="#removing-a-debt-code-remove-code">Removing a debt : <code>remove</code></a></h3>
+<div class="paragraph">
+<p>Removes away a number of debts from one transaction recorded in the DT using click-and-drag.</p>
+</div>
 <div class="paragraph">
 <p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/commit/726e9b1bf4b8f2138b63e63ca6788ff805dc824e?short_path=d80058c#diff-d80058c033b9f127ec727c18cc84ce4d">Pull Request#43</a>]<br></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="hiding-transactions-with-a-private-contact-code-hide-code"><a class="link" href="#hiding-transactions-with-a-private-contact-code-hide-code">Hiding transactions with a private contact : <code>hide</code></a></h3>
+<div class="paragraph">
+<p>Makes transactions exchanged with people tagged as private invisible. Can be toggled.<br>
+Format: hide n/NAME</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-interest-rate-to-a-debt-code-interest-code"><a class="link" href="#adding-interest-rate-to-a-debt-code-interest-code">Adding interest rate to a debt : <code>interest</code></a></h3>
+<div class="paragraph">
+<p>Restores the address book to the state before the previous undoable command was executed.<br>
+Format: undo
+Adds an interest amount to all transactions based on the interest scheme and interest rate you input.
+Format: interest INTEREST_SCHEME INTEREST_RATE</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="removing-a-debt-code-remove-code-2"><a class="link" href="#removing-a-debt-code-remove-code-2">Removing a debt : <code>remove</code></a></h3>
+<div class="paragraph">
+<p>Remove away a number of debts from one transaction recorded in the DT using click-and-drag.<br>
+The number of debts removed is up to the user’s selection.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selecting-a-trasaction-code-select-code"><a class="link" href="#selecting-a-trasaction-code-select-code">Selecting a trasaction : <code>select</code></a></h3>
+<div class="paragraph">
+<p>Selects the transaction identified by the index number used in the displayed transaction list.<br>
+Format: select INDEX</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sorting-transactions-code-sort-code"><a class="link" href="#sorting-transactions-code-sort-code">Sorting transactions : <code>sort</code></a></h3>
+<div class="paragraph">
+<p>Sort people by the amount of money loaned to or from them, the deadlines of the debts
+(be it whether you owe them or money or vice versa), or whether they are debtors or
+creditors.<br>
+Format: sort [t/TAG]&#8230;&#8203;</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-summary"><a class="link" href="#command-summary">Command Summary</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Add: add tt/TRANSACTION_TYPE ta/TRANSACTION_AMOUNT td/TRANSACTION_DEADLINE<br>
+         n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​<br>
+e.g. add tt/Loan ta/SGD 50.00 td/24/11/2018 n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend</p>
+</div>
+<div class="paragraph">
+<p>Convert: convert AMOUNT [MORE_AMOUNTS]<br>
+e.g. convert USD 20.00  KRW 35.50  MYR 130.60</p>
+</div>
+<div class="paragraph">
+<p>Edit: edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]
+e.g. edit 1 p/91234567 e/jondoe@example.com</p>
+</div>
+<div class="paragraph">
+<p>Interest: interest INTEREST_RATE INTEREST_SCHEME<br>
+e.g. interest simple 1.1%</p>
+</div>
+<div class="paragraph">
+<p>Select : select INDEX<br>
+e.g.select 2</p>
 </div>
 <div class="paragraph">
 <p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/commit/06243a33fee9c981b1367dfdeb1df0c95bdb0672?short_path=d80058c#diff-d80058c033b9f127ec727c18cc84ce4d">Pull Request #75</a>]<br></p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="features"><a class="link" href="#features">Features</a></h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Commands that make use of the transaction amounts such as filter, analytics and interest can be used
+      properly only after the convert command is executed first<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The command words are case-sensitive.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="adding-a-transaction-code-add-code"><a class="link" href="#adding-a-transaction-code-add-code">Adding a transaction : <code>add</code></a></h3>
+<div class="paragraph">
+<p>Adds a transaction to the current transaction list in the database.<br></p>
+</div>
+<div class="paragraph">
+<p>Conditions:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The transaction&#8217;s attributes are case sensitive.</p>
+</li>
+<li>
+<p>The transaction type can only be a loan or a debt<br>
+E.g. tt/loan OR tt/debt</p>
+</li>
+<li>
+<p>The transaction amount must be prefixed with a three-letter currency code (such as SGD)<br>
+and then with a value that is a real number rounded to two decimal places (even with a<br>
+trailing zero)
+E.g. ta/SGD 45.20 is valid
+    ta/SGD 45.3 is not valid (Only one digit after the decimal point)
+    ta/IN 56.75 is not valid (The currency code must consist of 3 letters as per ISO 3166 standard)</p>
+</li>
+<li>
+<p>The transaction deadline must be a valid date according to the Gregorian Calendar<br>
+following the DD/MM/YYYY format and should be a date in the future.<br>
+E.g. If the date of use of the application is 2nd November 2018:
+    td/25/12/2018 is valid
+    td/30/10/2018 is not valid (It&#8217;s a date that is in the past)
+    td/29/02/2018 is not valid (It&#8217;s not a valid date according to the Gregorian Calendar)</p>
+</li>
+<li>
+<p>A person&#8217;s name should only contain alphanumeric characters and spaces, and should not be blank.<br></p>
+</li>
+<li>
+<p>A person&#8217;s phone number should consist of only digits, with a minimum of 3 digits<br></p>
+</li>
+<li>
+<p>A person&#8217;s email address should be of the format local-part@domain and adhere to the following constraints:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The local-part should only contain alphanumeric characters and these special characters, excluding the parentheses.</p>
+</li>
+<li>
+<p>This is followed by a '@' and then a domain name. "</p>
+</li>
+<li>
+<p>The domain name must:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>be at least 2 characters long\n"</p>
+</li>
+<li>
+<p>start and end with alphanumeric characters\n"</p>
+</li>
+<li>
+<p>consist of alphanumeric characters, a period or a hyphen for the characters in between, if any.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>A person&#8217;s address can take any values but must not be blank.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Format: <br></p>
+</div>
+<div class="paragraph">
+<p>add tt/TYPE ta/AMOUNT td/DEADLINE n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…<br></p>
+</div>
+<div class="paragraph">
+<p>E.g. add tt/loan ta/SGD 50.00 td/18/12/2018 n/James Ho p/22224444 e/jamesho@example.com<br>
+a/123, Clementi Rd, 1234665 t/friends</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="converting-multiple-currencies-code-convert-code"><a class="link" href="#converting-multiple-currencies-code-convert-code">Converting multiple currencies: <code>convert</code></a></h3>
+<div class="paragraph">
+<p>Converts amounts in multiple different foreign currencies to their respective amounts in<br>
+the base currency, Singapore Dollars.<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Makes use of an external foreign currency API: <a href="https://free.currencyconverterapi.com/">Free Currency Converter API</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: convert</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="calculating-interest-on-transactions-code-interest-code"><a class="link" href="#calculating-interest-on-transactions-code-interest-code">Calculating interest on transactions: <code>interest</code></a></h3>
+<div class="paragraph">
+<p>Calculates interest on transaction based on the interest rate and scheme provided.<br></p>
+</div>
+<div class="paragraph">
+<p>Conditions:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Interest scheme must be either simple or compound. These keywords are case-insensitive.<br></p>
+</li>
+<li>
+<p>An interest rate must be entered in percentage with the value being a real number.<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Format: interest INTEREST_SCHEME INTEREST_RATE<br>
+e.g. interest simple 1.1%</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="updating-a-transaction-code-edit-code"><a class="link" href="#updating-a-transaction-code-edit-code">Updating a transaction : <code>edit</code></a></h3>
+<div class="paragraph">
+<p>Edits an existing transaction’s details.<br></p>
+</div>
+<div class="paragraph">
+<p>Conditions:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>An index must be provided identifying a transaction and that index must be an integer ranging from 1 to the size
+of the transaction list displayed</p>
+</li>
+<li>
+<p>Attributes such as name, phone and email are optional</p>
+</li>
+<li>
+<p>The attributes are case sensitive</p>
+</li>
+<li>
+<p>The attributes should follow the format specified in the add command.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Format:
+edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…<br>
+E.g. edit 2 n/James Lee e/jameslee@example.com</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sorting-transactions-code-sort-code-2"><a class="link" href="#sorting-transactions-code-sort-code-2">Sorting transactions : <code>sort</code></a></h3>
+<div class="paragraph">
+<p>Sorts transactions based on an input or default parameter.<br></p>
+</div>
+<div class="paragraph">
+<p>Conditions:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Valid sort parameters are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>amount</p>
+</li>
+<li>
+<p>type</p>
+</li>
+<li>
+<p>deadline</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The sort parameters are case-insensitive.</p>
+</li>
+<li>
+<p>If a parameter other than the listed ones is provided or the parameter is not provided at all,
+then the application assumes that you want to sort by the default parameter, the person name
+and the tie is broken using the phone number or email address.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+sort SORT_PARAMETER<br>
+E.g. sort type OR<br>
+     sort amount OR<br>
+     sort deadline<br></p>
+</div>
 <div class="paragraph">
 <p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/97/files?short_path=d80058c#diff-d80058c033b9f127ec727c18cc84ce4d">Pull Request #97</a>]<br></p>
+</div>
 </div>
 </div>
 </div>
@@ -203,14 +514,547 @@ in an appropriate format.</p>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="user-stories"><a class="link" href="#user-stories">User Stories</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/commit/96470f5e35192a5450fac8d7a805c05736d1a7d4?short_path=d23c809#diff-d23c8091515dc18149f4f2e759e1e288">Pull Request #9</a>]<br></p>
+<p>Priorities:  High (should have)<br>
+             Medium (would like to have)<br>
+             Low (unlikely to have)<br></p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Priority</th>
+<th class="tableblock halign-left valign-top">As a ..</th>
+<th class="tableblock halign-left valign-top">I want to ..</th>
+<th class="tableblock halign-left valign-top">So that I can</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">new user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">see the available command</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">execute the correct command as per need</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">add a new transaction</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">so that my transaction history is updated</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">delete a transaction</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">keep only the relevant records in my transaction history</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">hide private contact</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">uphold the confidentiality of the information provided by the contact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">add an image attribute for each transactor</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">identify that user before settling a debt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">know the past loans that I took</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">manage my finances</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">filter creditors and debtors</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">know who are the debtors and creditors</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">filter creditors and debtors</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">know who are the debtors and creditors</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">have a reminder to pay my creditor</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">ensure that my loans are not left outstanding</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">convert an amount between two different currencies</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: green;"><p class="tableblock">transact with people from different countries</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">find a transaction by name</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">retrieve information about the transaction</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">sort debtors by rating</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">take note of defaulters for future transactions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">sort by deadline for creditors</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">prioritise the persons who I should pay first</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">convert an amount between two different currencies</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">transact with people from different countries</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">sort by deadline for debtors</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">prioritise the persons who need to repay my loan</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">track debtors that did not pay you past the deadline</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">contact them for further information</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">able to provide an analysis of my financial transactions</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">give you an overview of my finances</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">sort creditors by amount of money I owe</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">roughly gauge my borrowing capacity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">add location attribute to my user record</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">know where to make the payment if the payment is to be done in transaction</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">sort debtors by amount of money the owe me</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">assess my lending capacity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">calculate the interest rate of the loan</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: yellow;"><p class="tableblock">know the right amount to collect from the debtors</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">Low</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">calculate the interest rate of the loan</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">know the right amount to collect from the debtors</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">Low</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">know how much money to borrow</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">prevent accruing debt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">Low</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">know how much money that I have loaned that transaction</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">keep records of the amount of money that I have loaned to that transaction</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">Low</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">filter debtors that pay on time</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: red;"><p class="tableblock">I can decide to award them more loans in the future</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/commit/5d42ebc0d2396551b96b92f769114ac8482faca3?short_path=d23c809#diff-d23c8091515dc18149f4f2e759e1e288">Pull Request #3</a>]<br></p>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-transaction"><a class="link" href="#deleting-a-transaction">Deleting a transaction</a></h3>
+<div class="paragraph">
+<p>Deletes a transaction while all transactions are listed</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Prerequisite: There must be at least one transaction in the database.</p>
+</li>
+<li>
+<p>Test case: <code>delete 1</code><br>
+Expected: First transaction is deleted from the list. Details of the deleted transaction shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>delete 0</code><br>
+Expected: No transaction is deleted. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filtering-transactions"><a class="link" href="#filtering-transactions">Filtering transactions</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Prerequisite: Command input must adhere strictly to specified format</p>
+</li>
+<li>
+<p>Test cases:<br></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Input: <code>filter n/alex e/example.com</code><br>
+Output: Lists all transactions with name 'alex' with an 'example.com' email</p>
+</li>
+<li>
+<p>Input: <code>filter tdmin/10/11/2018 tdmax/14/12/2018</code><br>
+Output: Lists all transactions with deadline between 10/11/2018 and 14/12/2018</p>
+</li>
+<li>
+<p>Input: <code>filter n/alex e/example.com and/ or/</code>
+Output: Command fails. Error details shown in the results display.</p>
+</li>
+<li>
+<p>Inputs: <code>filter</code>, <code>filter n/;;</code>,<code>filter or/</code>
+Output: Error details shown in the results display (same as above).</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="converting-currencies"><a class="link" href="#converting-currencies">Converting currencies</a></h3>
+<div class="paragraph">
+<p>Converting the amounts of all the transactions in the database to their respective amounts in the <strong>base currency, Singapore Dollars.</strong><br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Prerequisites:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The application must have an internet connection.<br></p>
+</li>
+<li>
+<p>All the amounts in the transaction are valid.<br></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case:<br></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Input: <code>convert</code>, <code>convert x</code> (x is any random input)<br>
+Output: The amounts in all the transactions conducted in foreign currencies will converted to Singapore Dollars.<br></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="calculating-interest"><a class="link" href="#calculating-interest">Calculating interest</a></h3>
+<div class="paragraph">
+<p>Calculates the interest on all the transaction amounts based on the provided <strong>monthly interest rate</strong>
+(which is capped at a <strong>maximum of 4.00%</strong>), following either the <strong>simple</strong> or <strong>compound</strong> interest scheme.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Prerequisite: All the transactions in the database have a valid amount.<br></p>
+</li>
+<li>
+<p>Test cases:<br></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Inputs: <code>interest simple 1.00%</code>, <code>interest SIMPLE 1.00%</code>, <code>interest Simple 1.00%</code><br>
+Output: Those transactions whose deadline is more than a month have their amounts incremented by the interest amount.<br></p>
+</li>
+<li>
+<p>Input: <code>interest sample 1.00%</code><br>
+Output: Error message is shown in the results display due to the wrongly entered interest scheme.<br></p>
+</li>
+<li>
+<p>Input: <code>interest simple 1.0%</code>, <code>interest simple 1.000%</code>, <code>interest simple 1</code>
+Output: Error message is shown in the results display because the interest rate is formatted incorrectly.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sorting-transactions"><a class="link" href="#sorting-transactions">Sorting transactions</a></h3>
+<div class="paragraph">
+<p>Sorts all the transactions based on <strong>transaction amount</strong>, <strong>transaction type</strong> or <strong>transaction deadline</strong> if the respective parameters
+are provided. Otherwise, the transactions are sorted in alphabetical ordering of the person&#8217;s name and
+the tie is broken using the person&#8217;s email or phone number.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Prerequisites:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>All the transactions are converted to the base currency using the <code>convert</code> command.<br></p>
+</li>
+<li>
+<p>All the attributes of the transaction are valid.<br></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test cases:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Input: <code>sort amount</code><br>
+Output: All the transactions are sorted in the descending order of amount values.<br></p>
+</li>
+<li>
+<p>Input: <code>sort type</code><br>
+Output: All the transactions are sorted in the alphabetical ordering of the types i.e. the debts come before the loans.<br></p>
+</li>
+<li>
+<p>Input: <code>sort deadline</code><br>
+Output: All the transactions are sorted from the earliest to the latest deadlines.<br></p>
+</li>
+<li>
+<p>Input: <code>sort</code>, <code>sort x</code> (where x is any random input)<br>
+Output: All the transactions are sorted in alphabetical order of the person names, with tie broken using the person&#8217;s email or phone number.<br></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-convert-transaction-amounts"><a class="link" href="#use-case-convert-transaction-amounts">Use case: Convert transaction amounts</a></h3>
+<div class="paragraph">
+<p>MSS:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user requests to convert all the transaction amounts to the base currency, Singapore Dollars.<br></p>
+</li>
+<li>
+<p>The system converts all those transaction amounts in foreign currencies to the base currency.
+Those transaction amounts in Singapore Dollars reflect no change.<br></p>
+</li>
+<li>
+<p>The system list all the transactions with updated amounts.<br></p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/commit/726e9b1bf4b8f2138b63e63ca6788ff805dc824e#diff-d23c8091515dc18149f4f2e759e1e288">Pull Request #43</a>]<br></p>
+<p>Extensions:</p>
+</div>
+<div class="paragraph">
+<p>1a. The user enters an additional parameter for the command<br></p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The system ignores the additional parameter and continues with the conversion as per normal.<br></p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>2a. The application is not connected to the internet.<br></p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The user is informed that there is an error reading the value from the API.<br></p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>2b. The database has no transactions contained within it.<br></p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The system responds with an error message because the operation is invalid on an empty database.<br></p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-calculate-interest-on-transaction-amounts"><a class="link" href="#use-case-calculate-interest-on-transaction-amounts">Use case: Calculate interest on transaction amounts</a></h3>
+<div class="paragraph">
+<p>MSS:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user requests to calculate interests on all the transaction amounts.<br></p>
+</li>
+<li>
+<p>The user enters the interest scheme (simple/compound) and the interest rate.<br></p>
+</li>
+<li>
+<p>The system calculates interest on the amounts of those transactions with a deadline more than a month away.
+The amounts of the transactions with deadlines within a month period are not updated.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Extensions:</p>
+</div>
+<div class="paragraph">
+<p>1a. There are no transactions in the database</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The system responds with an error message because the operation is invalid on an empty database.</p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>2a. The user enters a wrong interest scheme</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The system responds with an error message for the user to correct the scheme.</p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>2b. The user enters a wrong interest rate</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The system responds with an error message for the user to adjust the interest rate.</p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="use-case-sort-transactions-by-parameter"><a class="link" href="#use-case-sort-transactions-by-parameter">Use case: Sort transactions by parameter</a></h4>
+<div class="paragraph">
+<p>MSS:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user requests to sort the transaction based on a given parameter.</p>
+</li>
+<li>
+<p>The system sorts all the transactions based on the given parameter.<br></p>
+</li>
+<li>
+<p>The system lists all the transactions according to the new sorting order.<br></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Extensions:</p>
+</div>
+<div class="paragraph">
+<p>1a. The user enters an invalid parameter</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The system sorts by the default parameter: the name of the transactor.</p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>1b. The user enters no parameters</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The system sorts by the same default parameter as above</p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>2a. There are no transactions in the database</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The system responds with an error message due to the empty database.</p>
+</li>
+<li>
+<p>Use case ends.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p>[<a href="https://github.com/CS2103-AY1819S1-W12-2/main/pull/150/files?short_path=d23c809#diff-d23c8091515dc18149f4f2e759e1e288">Pull Request #150</a>]<br></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 13:32:31 UTC</div></div></div></body></html>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-13 15:42:52 UTC</div></div></div></body></html>
