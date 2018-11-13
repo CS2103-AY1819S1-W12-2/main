@@ -59,7 +59,7 @@ public class TypicalTransactions {
     public static final Transaction BOB_TRANSACTION = new TransactionBuilder().withPerson(TypicalPersons.BOB)
             .withAmount("SGD 42.50")
             .withType("Loan")
-            .withDeadline("12/12/2021").build();
+            .withDeadline("19/12/2018").build();
 
 
     private TypicalTransactions() {} // prevents instantiation
